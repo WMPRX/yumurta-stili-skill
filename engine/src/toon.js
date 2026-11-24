@@ -140,7 +140,7 @@ function hat(g, kind, w, h, look, lit) {
     g.strokeStyle = PLUM; puff(); g.stroke();
     g.fillStyle = '#f6f3ee'; g.beginPath(); g.roundRect(-w * .33, o - h * .56, w * .66, h * .24, 10); g.fill(); g.stroke();
     g.strokeStyle = '#8f86a6'; g.lineWidth = 3.6; for (const x of [-.16, 0, .16]) { g.beginPath(); g.moveTo(w * x, o - h * .52); g.lineTo(w * x, o - h * .36); g.stroke(); }
-  }
+  } else if (look.drawHat) look.drawHat(g, w, h, lit);  // a story's own hat or hair-do: (g, head w, head h, lit), head centre at 0,0
 }
 
 // ---------- face ----------
@@ -237,6 +237,13 @@ function face(g, w, h, f, L) {
       g.closePath(); g.fill(); g.stroke();
     }
   }
+}
+// where face() puts the eyes (for glasses and other extras drawn by a story): eye centres and the mouth
+function faceAt(w, h, f, L) {
+  const turn = clamp(f.look || 0, -1, 1), tv = clamp(f.lookY || 0, -1, 1);
+  const fx = turn * w * .1, fy = tv * h * .045 + (L.hat ? h * .035 : 0), ey = fy - h * .045;
+  const eye = s => fx + s * w * (.14 - .02 * Math.max(0, s * turn));
+  return { turn, fx, fy, ey, eyeL: [eye(-1), ey], eyeR: [eye(1), ey], mouth: [fx + turn * w * .03, fy + h * .2] };
 }
 function beard(g, w, h, L, lit) {                                             // hugs the jaw, comes to a soft point under the chin
   const col = L.beard, len = L.beardLen ?? .8;
@@ -378,7 +385,8 @@ export class Toon {
     const hR = p.noArmR ? null : limb(g, cx + bw * .36, sh, aR[0], aR[1], 120, 112, LIMB, 1);
     for (const [h, prop, s] of [[hL, p.propL, -1], [hR, p.propR, 1]]) {
       if (!h) continue;
-      if (prop && PROPS[prop]) PROPS[prop](g, h[0], h[1], s, p);
+      if (typeof prop === 'function') prop(g, h[0], h[1], s, p);              // a story's own prop, drawn like the built-in ones
+      else if (prop && PROPS[prop]) PROPS[prop](g, h[0], h[1], s, p);
       mitten(g, h[0], h[1], s);
     }
     this.hands = { L: hL, R: hR }; this.shY = sh;
@@ -400,6 +408,7 @@ export class Toon {
     if (L.beard) beard(g, hw, hh, L, lit);
     if (L.hat && !L.hatBack) hat(g, L.hat, hw, hh, L, lit);
     face(g, hw, hh, p, L);                                                     // after the hat: raised brows stay visible on its edge
+    if (L.drawFace) L.drawFace(g, hw, hh, p, lit, faceAt(hw, hh, p, L));        // a story's extras over the face (glasses, a tuft of hair)
     if (p.sweat) { g.globalAlpha = Math.min(1, p.sweat); g.fillStyle = '#9fd4ff'; g.strokeStyle = PLUM; g.lineWidth = 5; g.beginPath(); g.moveTo(hw * .44, -hh * .3); g.quadraticCurveTo(hw * .58, -hh * .08, hw * .47, -hh * .04); g.quadraticCurveTo(hw * .35, -hh * .08, hw * .44, -hh * .3); g.fill(); g.stroke(); g.globalAlpha = 1; }
     if (p.laughMarks) { g.strokeStyle = PLUM; g.lineWidth = 6; g.lineCap = 'round'; g.globalAlpha = p.laughMarks; for (const s of [-1, 1]) for (let k = 0; k < 3; k++) { const a = (-40 + k * 25) * D2R; g.beginPath(); g.moveTo(s * (hw * .62 + 6), -hh * .1 + Math.sin(a) * 60); g.lineTo(s * (hw * .62 + 36), -hh * .1 + Math.sin(a) * 80); g.stroke(); } g.globalAlpha = 1; }
     g.restore();

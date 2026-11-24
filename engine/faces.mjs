@@ -10,6 +10,9 @@ const story = process.argv[2] || 'is-odasi', zoom = process.argv.includes('--zoo
 const OUT = path.join(here, '..', 'stories', story, 'out'); fs.mkdirSync(OUT, { recursive: true });
 const CHROME = findChrome();
 const ANGLE = process.platform === 'win32' ? ['--use-angle=d3d11'] : process.platform === 'darwin' ? ['--use-angle=metal'] : [];
+// Linux containers: root needs --no-sandbox; extra flags (e.g. software GL: --use-angle=swiftshader --enable-unsafe-swiftshader) via CHROME_FLAGS
+if (process.platform === 'linux' && process.getuid && process.getuid() === 0) ANGLE.push('--no-sandbox');
+if (process.env.CHROME_FLAGS) ANGLE.push(...process.env.CHROME_FLAGS.split(/\s+/).filter(Boolean));
 const { server, port } = await startServer();
 const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new', args: ['--ignore-gpu-blocklist', ...ANGLE, '--hide-scrollbars'] });
 const page = await browser.newPage();
