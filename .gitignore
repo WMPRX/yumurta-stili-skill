@@ -7,3 +7,4 @@ ref/
 *.mp4
 !ornek/is-odasi.mp4
 __pycache__/
+!stories/bogdanov/voice/voice.wav
