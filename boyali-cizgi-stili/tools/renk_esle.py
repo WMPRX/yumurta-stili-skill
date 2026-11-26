@@ -4,9 +4,12 @@
     python tools/renk_esle.py girdi.mp4 cikti.mp4 [--guc 0.6] [--ton 0.5] [--siyah 1]
 
 Ne yapar (Lab uzayında, kare kare, plan içinde yumuşatılmış istatistiklerle):
-  1. Ton: L'nin 1/50/99 yüzdeliklerini referansa doğru parça parça doğrusal eşler (--ton gücüyle).
+  1. Ton: L'nin 1/50/99 yüzdeliklerini referansa doğru parça parça doğrusal eşler (--ton gücüyle;
+     kaydırma en fazla 8/6/6 L birimi, böylece kompozisyonu farklı planlar zorlanmaz).
   2. Bölünmüş ton: gölge / orta / ışık bantlarının a-b ortalamalarını referansa çeker
      (gölgeler mor-erik, ortalar okra, ışıklar teal; analiz/veri/renk_hedef.json).
+     Kaydırma en fazla 6 Lab birimi; bant ortalaması hedeften 10 birimden uzaklaştıkça azalır, 30'da hiç uygulanmaz
+     (renk kayması değil kompozisyon farkı: ör. gökyüzü olmayan bir planın açık tonları kumdur).
   3. Doygunluk: ortalama Lab kromasını 24.5'e doğru ölçekler (--guc ile).
   4. Kontrast: RMS kontrastı 19.7'ye doğru ölçekler (--ton ile).
   5. Saf siyahı kaldırır: en koyu değerleri mor-siyaha (#221a1f) doğru yükseltir (--siyah 1).
@@ -84,14 +87,16 @@ def main():
         p1, p50, p99 = ema["p"]
         xs = [0, p1, p50, p99, 100]
         ys_t = [0, T_P1, T_P50, T_P99, 100]
-        ys = [x + a.ton * (y - x) for x, y in zip(xs, ys_t)]
+        # kaydırma sınırlı: karede koyu özne yoksa (ör. yalnız kum) en koyu %1'i tene çekmesin
+        caps = [0, 8, 6, 6, 0]
+        ys = [x + float(np.clip(a.ton * (y - x), -cp, cp)) for x, y, cp in zip(xs, ys_t, caps)]
         if all(np.diff(xs) > 0):
             L2 = np.interp(L, xs, ys).astype(np.float32)
         else:
             L2 = L
         # kontrast: RMS'i hedefe (19.7) doğru, medyan etrafında ölçekle
         c = (T_RMS / max(float(ema["rms"][0]), 1)) ** a.ton
-        c = float(np.clip(c, 0.75, 1.25))
+        c = float(np.clip(c, 0.75, 1.4))
         med = float(np.interp(p50, xs, ys))
         L2 = np.clip(med + (L2 - med) * c, 0, 100)
         # 2) bölünmüş ton: her bant için kaydırma, L'ye göre yumuşak ağırlıkla
@@ -103,8 +108,11 @@ def main():
             cur = ema[key]
             if np.any(np.isnan(cur)):
                 continue
-            d = (tgt[key] - cur) * a.guc
-            d = np.clip(d, -12, 12)
+            diff = tgt[key] - cur
+            # Hedeften çok uzak bir bant ortalaması renk kayması değil kompozisyon farkıdır
+            # (ör. gökyüzü olmayan bir planda açık tonlar kumdur, teal olamaz): o zaman dokunma.
+            near = float(np.clip(1 - (np.hypot(*diff) - 10) / 20, 0, 1))
+            d = np.clip(diff * a.guc * near, -6, 6)
             A = A + w * d[0]; B = B + w * d[1]
         # 3) doygunluk: ortalama kromayı hedefe (24.5) doğru ölçekle
         k = (T_KROMA / max(float(ema["kroma"][0]), 1)) ** a.guc

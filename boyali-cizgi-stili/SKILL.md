@@ -54,7 +54,7 @@ pip install -r requirements.txt          # numpy, opencv-python-headless
 ```bash
 python tools/renk_esle.py projeler/<ad>/kurgu.mp4 projeler/<ad>/renk.mp4 --guc 0.6 --ton 0.6
 ```
-Bu adım ton yüzdeliklerini, kontrastı, kromayı ve bölünmüş tonu (mor gölge, okra orta, teal ışık) referansa çeker ve saf siyahı mor-siyaha kaldırır. Referansın kendisine uygulandığında neredeyse hiç değişiklik yapmaz. Kliplerin rengi çok farklıysa her klibi kurgudan önce ayrı ayrı eşleyin.
+Bu adım ton yüzdeliklerini, kontrastı, kromayı ve bölünmüş tonu (mor gölge, okra orta, teal ışık) referansa çeker ve saf siyahı mor-siyaha kaldırır. Referansın kendisine uygulandığında neredeyse hiç değişiklik yapmaz (27/27 hedef korunur). Araç bilerek temkinli: ton kaydırması en fazla 8/6/6 L birimi, renk kaydırması en fazla 6 Lab birimi; bir bandın ortalaması hedeften çok uzaksa (ör. gökyüzü olmayan bir planda açık tonlar kum olduğu için) o bant hiç kaydırılmaz. Bu yüzden kompozisyonu farklı planları bozmaz, ama rengi çok kaymış bir klibi tek başına kurtaramaz: o durumda promptu düzeltip yeniden üretin.
 
 ### 7. Ses
 `sablonlar/ses_plani.md`: ortam + foley + vuruşlar + nidalar, kelime yok. Vuruşlar kesmelere oturur, sessiz duraklama gerçekten sessizdir. Hedef −21 LUFS, LRA ≥ 8, TP ≤ −1. Ses dosyası `kurgu.json` → `"ses"` ile eklenir; kurguyu tekrar çalıştırıp 6. adımı yineleyin.
@@ -85,6 +85,7 @@ ffmpeg -i projeler/<ad>/renk.mp4 -c:v libx264 -crf 17 -preset slow -pix_fmt yuv4
 | `tools/kurgu.py` | Klipleri birleştirir; itme/çekme, kayma, darbe sarsıntısı, smear geçişi, ses |
 | `tools/kontakt.sh` | Zaman damgalı kontakt sayfası |
 | `tools/pano.py` | Palet ve ritim panoları |
+| `projeler/kum-balikcisi/taslak/` | Örnek: aynı senaryonun kodla çizilmiş 2B taslağı (pycairo). Yapay zekâ üreticisi yokken zamanlamayı, kurguyu ve sesi görmek için bir şablon |
 | `tools/promptla.py` | Projenin `planlar.json` dosyasından kopyalanmaya hazır `PROMPTLAR.md` üretir (stil ve negatif blokları `sablonlar/promptlar.md`'den alır) |
 
 ## Sık sorunlar
