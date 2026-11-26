@@ -1,0 +1,19 @@
+{
+ "fps": 25,
+ "boyut": [1920, 1080],
+ "ses": "ses/miks.wav",
+ "planlar": [
+  {"klip": "klipler/01_arzu.mp4",       "bas": 0.3, "sure": 2.6},
+  {"klip": "klipler/02_arac.mp4",       "bas": 0.4, "sure": 0.9},
+  {"klip": "klipler/03_zafer.mp4",      "bas": 0.2, "sure": 3.5, "itme": 8},
+  {"klip": "klipler/04_tirmanma.mp4",   "bas": 0.3, "sure": 2.0, "itme": 1, "sarsinti": [[0.5, 6], [1.3, 6]]},
+  {"klip": "klipler/05_terskose.mp4",   "bas": 0.2, "sure": 1.6, "itme": -3, "gecis": "smear", "smear_kare": 1, "smear_yon": 90},
+  {"klip": "klipler/06_bedel_a.mp4",    "bas": 0.3, "sure": 1.8, "gecis": "smear", "smear_kare": 1, "smear_yon": 0},
+  {"klip": "klipler/07_bedel_b.mp4",    "bas": 0.2, "sure": 2.5, "itme": -12, "sarsinti": [[0.6, 4], [1.6, 4]]},
+  {"klip": "klipler/08_duraklama.mp4",  "bas": 0.0, "sure": 4.0, "itme": -2, "gecis": "smear", "smear_kare": 4, "smear_yon": 20},
+  {"klip": "klipler/09_ikinci.mp4",     "bas": 0.3, "sure": 2.0},
+  {"klip": "klipler/10_terskose2.mp4",  "bas": 0.2, "sure": 2.8, "itme": -7, "gecis": "smear", "smear_kare": 1, "smear_yon": 160},
+  {"klip": "klipler/11_panik.mp4",      "bas": 0.2, "sure": 2.0, "sarsinti": [[0.2, 5], [0.9, 5], [1.5, 4]]},
+  {"klip": "klipler/12_final.mp4",      "bas": 0.0, "sure": 4.0}
+ ]
+}

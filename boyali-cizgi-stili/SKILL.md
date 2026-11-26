@@ -37,7 +37,7 @@ pip install -r requirements.txt          # numpy, opencv-python-headless
 - Kullanıcı görseli kendi aracında (Higgsfield, Midjourney, Flux, Nano Banana vb.) üretir ve en iyisini `projeler/<ad>/karakterler/` klasörüne koyar. Claude bu dosyayı görüp sayfanın kontrol listesine göre değerlendirir: kontur, ten değeri, göz büyüklüğü, palet.
 
 ### 4. Anahtar kareler ve plan videoları
-- Her plan için `[PLAN]` türünü seçin (A-H) ve `[PLAN] + [SAHNE] + [STİL]` promptunu yazın. Negatif alana `[NEGATİF]` girer.
+- Her plan için `[PLAN]` türünü seçin (A-H). Plan metinlerini `projeler/<ad>/planlar.json` dosyasına yazın (örnek: `projeler/kum-balikcisi/planlar.json`), sonra `python tools/promptla.py projeler/<ad>/planlar.json projeler/<ad>/PROMPTLAR.md` çalıştırın. Bu, `[PLAN] + [SAHNE] + [STİL]` birleşimini ve `[NEGATİF]` bloğunu her plan için hazır hale getirir.
 - Anahtar kareleri kullanıcı üretir ve `projeler/<ad>/kareler/NN.png` olarak koyar. Claude her kareyi `promptlar.md` sonundaki kontrol listesiyle inceler, sorunlu olanlar için düzeltilmiş prompt verir.
 - Her plan için `[HAREKET]` promptu yazın. Kamera cümlesi başta, pozlar sırayla, ifadeler oklarla. 3-5 sn üretilir ve `projeler/<ad>/klipler/NN_ad.mp4` olarak kaydedilir.
 - Tek bir anahtar karenin ölçüsünü hızlıca görmek için kareyi 1 sn'lik videoya çevirip ölçebilirsiniz:
@@ -85,6 +85,7 @@ ffmpeg -i projeler/<ad>/renk.mp4 -c:v libx264 -crf 17 -preset slow -pix_fmt yuv4
 | `tools/kurgu.py` | Klipleri birleştirir; itme/çekme, kayma, darbe sarsıntısı, smear geçişi, ses |
 | `tools/kontakt.sh` | Zaman damgalı kontakt sayfası |
 | `tools/pano.py` | Palet ve ritim panoları |
+| `tools/promptla.py` | Projenin `planlar.json` dosyasından kopyalanmaya hazır `PROMPTLAR.md` üretir (stil ve negatif blokları `sablonlar/promptlar.md`'den alır) |
 
 ## Sık sorunlar
 - **Video modeli kamerayı gezdiriyor:** hareket promptunun ilk cümlesi kamera cümlesi olmalı. Hâlâ geziyorsa klibin en sakin 1-2 sn'sini seçin ve kurguda `itme` ile kontrollü hareket ekleyin.

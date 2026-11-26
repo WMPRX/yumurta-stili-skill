@@ -7,4 +7,9 @@ ref/
 *.mp4
 !ornek/is-odasi.mp4
 __pycache__/
-boyali-cizgi-stili/projeler/
+boyali-cizgi-stili/projeler/*/klipler/
+boyali-cizgi-stili/projeler/*/kareler/
+boyali-cizgi-stili/projeler/*/karakterler/
+boyali-cizgi-stili/projeler/*/ses/
+boyali-cizgi-stili/projeler/*/pano/
+boyali-cizgi-stili/projeler/*/*.png
