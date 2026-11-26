@@ -1,0 +1,32 @@
+{
+ "_aciklama": "Referans videodan ölçülen hedef aralıklar. 'ref' referansın değeri, min/max kabul aralığı. tools/karsilastir.py bu dosyayı okur. Yol, olc.py çıktısındaki anahtarı gösterir.",
+ "hedefler": [
+  {"yol": "format.fps", "ref": 25, "min": 24, "max": 25, "not": "25 fps (24 de olur). 30/60 fps hareketi fazla akıcı, 'oyun' gibi gösterir"},
+  {"yol": "plan.sure_ort", "ref": 2.48, "min": 1.9, "max": 3.1, "not": "Ortalama plan süresi (sn)"},
+  {"yol": "plan.sure_min", "ref": 0.88, "min": 0.6, "max": 1.4, "not": "En kısa plan: tek bir vurgu (bıçak parlaması gibi)"},
+  {"yol": "plan.sure_maks", "ref": 4.08, "min": 3.2, "max": 5.0, "not": "En uzun plan: komik sessiz duraklama veya final tepki"},
+  {"yol": "plan.smear_kesme_orani", "ref": 0.36, "min": 0.2, "max": 0.6, "not": "Kesmelerin yaklaşık üçte biri 1-5 karelik hareket bulanığı (smear) ile girer"},
+  {"yol": "kamera.duran_kare_orani", "ref": 0.39, "min": 0.25, "max": 0.6, "not": "Karelerin ~%40'ında kamera fiilen sabit (kilitli kadraj); geri kalanı yavaş itme/çekme"},
+  {"yol": "kamera.hiz_px_kare_medyan", "ref": 0.41, "min": 0.1, "max": 0.9, "not": "Kamera öteleme hızı (px/kare, 1920 genişlikte)"},
+  {"yol": "kamera.zoom_yuzde_kare_p90", "ref": 0.21, "min": 0.05, "max": 0.35, "not": "İtme/çekme hızının üst ucu (%/kare). Whip zoom yok"},
+  {"yol": "ton.L_ort", "ref": 56.6, "min": 50, "max": 64, "not": "Ortalama parlaklık (Lab L). Gündüz, açık, havadar"},
+  {"yol": "ton.L_p1", "ref": 8.6, "min": 4, "max": 14, "not": "Koyu uç: karakter teni ve ağız içi"},
+  {"yol": "ton.L_p99", "ref": 89.0, "min": 84, "max": 95, "not": "Açık uç: göz akı, güneş halesi, krem kumaş"},
+  {"yol": "ton.rms_kontrast", "ref": 19.7, "min": 15, "max": 24, "not": "RMS kontrast (L birimi). Geniş planlar 12-16, yakın planlar 26-28"},
+  {"yol": "ton.saf_siyah_kare_orani", "ref": 0.043, "min": 0, "max": 0.1, "not": "Saf siyah (RGB<8) neredeyse yok; en koyu ton mor-siyah #221a1f"},
+  {"yol": "renk.doygunluk_hsv", "ref": 0.404, "min": 0.33, "max": 0.48, "not": "Orta doygunluk: neon değil, tozlu-pastel"},
+  {"yol": "renk.kroma_ort", "ref": 24.5, "min": 19, "max": 30, "not": "Lab kroma ortalaması"},
+  {"yol": "renk.sicak", "ref": 0.579, "min": 0.46, "max": 0.68, "not": "Sıcak tonların (kırmızı-turuncu-sarı) kroma payı"},
+  {"yol": "renk.soguk", "ref": 0.389, "min": 0.28, "max": 0.48, "not": "Soğuk tonların (yeşil-cyan-mavi) kroma payı; neredeyse tamamı teal gökyüzü"},
+  {"yol": "renk.ton_aileleri.turuncu", "ref": 0.357, "min": 0.22, "max": 0.45, "not": "Kum, meyve, deri: ana sıcak aile"},
+  {"yol": "renk.ton_aileleri.cyan", "ref": 0.307, "min": 0.2, "max": 0.42, "not": "Teal gökyüzü ve kostüm: ana soğuk aile"},
+  {"yol": "renk.ton_aileleri.yesil", "ref": 0.004, "min": 0, "max": 0.04, "not": "Saf yeşil YOK. Bitkiler hardal-zeytin (sarı-turuncu ailesi)"},
+  {"yol": "renk.ton_aileleri.mavi", "ref": 0.0, "min": 0, "max": 0.04, "not": "Lacivert/saf mavi yok; gök teal"},
+  {"yol": "doku.cizgi_yogunlugu", "ref": 0.001, "min": 0, "max": 0.004, "not": "Kontur çizgisi yok; biçimler renk ve değer farkıyla ayrılır"},
+  {"yol": "doku.gren", "ref": 0.54, "min": 0, "max": 1.4, "not": "Film greni yok denecek kadar az; doku fırça izinde, gürültüde değil"},
+  {"yol": "derinlik.dof_ort", "ref": 1.24, "min": 0.8, "max": 1.7, "not": "Belirgin ama yumuşak alan derinliği: arka plan hafif flu"},
+  {"yol": "ses.lufs", "ref": -20.8, "min": -23, "max": -15, "not": "Entegre yükseklik (LUFS)"},
+  {"yol": "ses.lra", "ref": 15.2, "min": 8, "max": 20, "not": "Yüksek dinamik: sessiz duraklamalar ve sert efekt vuruşları"},
+  {"yol": "ses.true_peak_dbfs", "ref": -1.6, "min": -6, "max": -1, "not": "Tepe"}
+ ]
+}

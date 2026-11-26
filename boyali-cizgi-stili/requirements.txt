@@ -1,0 +1,4 @@
+# Python 3.10+, ffmpeg/ffprobe PATH'te
+numpy
+opencv-python-headless
+Pillow   # yalnızca tools/pano.py
