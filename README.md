@@ -14,6 +14,10 @@ Remotion, React, Blender ya da yapay zekâ video üreticisi yok. Sadece Claude (
 
 ▶ **Bitmiş video:** [`ornek/is-odasi.mp4`](ornek/is-odasi.mp4) (1080×1920, sesli, 9 MB)
 
+## Ek stil: boyalı çizgi
+
+`boyali-cizgi-stili/` ayrı bir skill: elle boyanmış dokulu 3B görünümde, diyalogsuz, 16:9 komedi kısa filmleri. Ölçülmüş stil kitabı, yapay zekâ görsel/video üreticileri için prompt şablonları ve ölçüm, kurgu ve renk eşleme araçları içeriyor. Ayrıntılar `boyali-cizgi-stili/README.md` dosyasında.
+
 ## İçindekiler
 
 | Yol | Ne |
