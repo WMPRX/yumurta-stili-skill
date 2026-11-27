@@ -199,9 +199,29 @@ def tube(c, pts, w0, w1=None, n=8, cap=True):
 LIGHT = [0.62, -0.78]     # ışık yönü (ekran), sahne başına değiştirilir
 
 
+# 2.5D: hacimli ışık için parça kimliği kaydı. REC = dict(ctx=kimlik bağlamı, mats=[...]) olunca
+# her dolgu, aynı dönüşümle kimlik tamponuna da benzersiz bir renkle çizilir.
+REC = None
+SHADE_SCALE = 1.0       # 2.5D'de dolgu içi gradyan azaltılır, ışığı gölgelendirici verir
+NO_SHADE = {"goz": 0.25, "agiz": 0.5, "beyaz": 0.8}
+
+
+def _rec(c, path, mat_name):
+    if REC is None:
+        return
+    idc = REC["ctx"]
+    REC["mats"].append(mat_name)
+    k = len(REC["mats"])            # 1..
+    idc.save(); idc.set_matrix(c.get_matrix()); idc.new_path(); path(idc)
+    idc.set_source_rgb((k & 255) / 255, ((k >> 8) & 255) / 255, 0); idc.fill(); idc.restore()
+
+
 def fill(c, path, mat, shade=0.55, hi=0.35, light=None, tex=1.0, alpha=1.0):
     """Yolu doku + yönlü gölgelendirme ile doldurur (kontur yok)."""
     lx, ly = light or LIGHT
+    shade *= SHADE_SCALE; hi *= SHADE_SCALE
+    if alpha >= 0.5:
+        _rec(c, path, mat.name)
     c.save()
     c.new_path()
     path(c)

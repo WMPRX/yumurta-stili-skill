@@ -86,6 +86,7 @@ ffmpeg -i projeler/<ad>/renk.mp4 -c:v libx264 -crf 17 -preset slow -pix_fmt yuv4
 | `tools/kontakt.sh` | Zaman damgalı kontakt sayfası |
 | `tools/pano.py` | Palet ve ritim panoları |
 | `projeler/kum-balikcisi/taslak/` | Örnek: aynı senaryonun kodla çizilmiş 2B taslağı (pycairo). Yapay zekâ üreticisi yokken zamanlamayı, kurguyu ve sesi görmek için bir şablon |
+| `projeler/kum-balikcisi/taslak25/` | Aynı senaryonun 2.5D taslağı: gerçek 3B kamera ve perspektifli zemin, 2B çizilmiş kartlara hacimli ışık, perspektife uygun gölgeler, derinliğe bağlı alan derinliği. Yeni bir senaryoda kodla taslak gerekiyorsa buradan başlayın (`derin.py` motor, `sahne25.py` planlar) |
 | `tools/promptla.py` | Projenin `planlar.json` dosyasından kopyalanmaya hazır `PROMPTLAR.md` üretir (stil ve negatif blokları `sablonlar/promptlar.md`'den alır) |
 
 ## Sık sorunlar

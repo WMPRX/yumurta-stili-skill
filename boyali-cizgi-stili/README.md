@@ -17,7 +17,7 @@ Bir referans videonun (1920×1080, 25 fps, 29,8 sn) tasarımı ölçülerek say�
 | `referans/` | Palet (genel + öğe öğe) ve ritim panoları |
 | `sablonlar/` | Prompt blokları (stil, negatif, karakter, 8 plan türü, hareket), karakter formu, senaryo şablonu, ses planı, örnek `kurgu.json` |
 | `tools/` | `olc.py`, `karsilastir.py`, `renk_esle.py`, `kurgu.py`, `kontakt.sh`, `pano.py`, `promptla.py` |
-| `projeler/kum-balikcisi/` | İlk proje: senaryo, karakterler, hazır promptlar, kurgu ve ses planı (görseller ve klipler repoya girmez) |
+| `projeler/kum-balikcisi/` | İlk proje: senaryo, karakterler, hazır promptlar, kurgu ve ses planı; kodla iki taslak: `taslak/` (2B) ve `taslak25/` (2.5D), videoları `kum-balikcisi_taslak.mp4` ve `kum-balikcisi_25d.mp4` |
 
 ## Kurulum
 
