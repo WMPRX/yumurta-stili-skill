@@ -14,7 +14,7 @@ export const LOOK = {
   knee: .5, shoulder: .32,       // highlight roll-off on brightness (hue kept): above `knee`, l -> knee + d / (1 + d / shoulder); a cream face or a lit window stays under ~0.75
   vig: .72,                     // vignette strength
   vigIn: .28,                   // where it starts (0 centre … 1 corner)
-  scan: .046,                   // scanline amplitude
+  scan: .049,                   // scanline amplitude (measures ~0.75× this after encoding)
   scanPeriod: .014453,          // fraction of the height
   scanSpeed: .00036,            // fraction of the height per frame (downwards); measures ~1.07× this after encoding
   grain: .012,
