@@ -39,8 +39,9 @@ const SPECIES = {
     expr: 'bilge',
   },
   kirpi: {    // hedgehog: the young one. Crown of spines, round cream face, big shiny eyes, striped knit sweater
-    renk: { diken: '#6a4a33', dikenAcik: '#9a7557', yuz: '#ecdfc9', yuzKoyu: '#c9b293', kulak: '#d79a8a', burun: '#2b1b14', allik: '#e08a78',
-            kazak: '#bd8d3c', kazakKoyu: '#94692a', serit: '#ead9b4', yaka: '#e7dfcf', el: '#ecdfc9' },
+    // the face is mid-light: a cream face filling a close-up pushes the contrast over the references
+    renk: { diken: '#6a4a33', dikenAcik: '#9a7557', yuz: '#d8c6aa', yuzKoyu: '#b8a080', kulak: '#d79a8a', burun: '#2b1b14', allik: '#e08a78',
+            kazak: '#bd8d3c', kazakKoyu: '#94692a', serit: '#ead9b4', yaka: '#e7dfcf', el: '#d8c6aa' },
     expr: 'notr',
   },
 };

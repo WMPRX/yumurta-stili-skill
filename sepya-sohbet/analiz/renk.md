@@ -35,6 +35,7 @@ Sahne normal renklerle boyanıyor; `engine/src/post.js` tek WebGL geçişinde:
 c = mix(gri(c), c, sat)                 sat = 0,12      (renklerin %12'si kalıyor)
 c = c ^ gamma                            gamma = (1,0  1,17  1,36)   koyu tonlarda mavi önce düşüyor: bölünmüş tonlama
 c = lift + c · (gain − lift)             gain = (0,97  0,85  0,79)   lift = (−0,03  −0,032  −0,034)
+l > 0,5 ise  l → 0,5 + d / (1 + d / 0,32)  (d = l − 0,5; ton korunur)      parlak ton omzu
 c = c · (1 − 0,72 · smoothstep(0,28; 1,05; r))      vinyet
 c = c · (1 + 0,046 · sin(2π (y − kare · 0,00036 · H) / (0,014453 · H)))      tarama çizgileri
 ```
@@ -42,6 +43,9 @@ c = c · (1 + 0,046 · sin(2π (y − kare · 0,00036 · H) / (0,014453 · H))) 
 Bu değerler örnek videoda 22 karelik ölçümle bulundu: orta parlaklık 0,145, p5 0,055, a* 6,6, b* 10,5, C* 12,2 / 18,4, köşe 0,22.
 İlk denemelerde (sat 0,42, tek gama) koyu tonlar griydi (C* ortanca 7) ve siyahlar açıktı (p5 0,078); referansın tek tonlu görünümü
 ancak kanal başına gama ile geldi.
+
+Parlak ton omzu ikinci hikâyede (At Oynatmak) eklendi: Kirpi'nin yakın planlarında krem yüz kareyi doldurunca kontrast 0,74'e çıkıyordu (referansta en fazla 0,62).
+Kanal başına sıkıştırma sıcaklığı da düşürdü (a* 4,8); parlaklık üzerinden sıkıştırınca renk korundu (a* 6,4, kontrast 0,60).
 
 ## Doku
 

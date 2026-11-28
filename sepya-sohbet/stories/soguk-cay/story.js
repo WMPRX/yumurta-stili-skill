@@ -13,7 +13,7 @@ export const MUSIC = { key: 'Am', bpm: 66 };                       // audio/mix.
 
 export function build({ W, L }) {
   const K = { set: 'kafe' };
-  const TEL = { kimden: 'Deniz', el: '#ecdfc9', mesajlar: [
+  const TEL = { kimden: 'Deniz', el: '#d8c6aa', mesajlar: [
     { ben: false, metin: 'Tamam, görüşürüz.' }, { ben: true, metin: 'Görüşürüz.' }, { taslak: true, metin: 'Seni özledim' }] };
   // 21 shots over ~79 s of voice: median ≈ 3.6 s (references 3.4-5.2). Types: 7 mentor, 6 young one, 2 two-shots, 5 inserts, 1 wide.
   const shots = [

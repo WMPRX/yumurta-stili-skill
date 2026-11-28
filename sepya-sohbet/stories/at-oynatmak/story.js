@@ -13,14 +13,13 @@ export function build({ W, L }) {
   const FISILTI = { kimler: ['kedi', 'kirpi'], fisilti: true };     // someone whispering into someone's ear, in a lit window
   const EL = { el: '#8b7259', kol: '#4f5140' };                      // Baykuş's hand and sleeve
   const jumpAt = W('Ama') - .1, bigAt = L(13).start - .2;
-  // 24 shots over ~88 s of voice: median ≈ 3.7 s. Types: 7 mentor, 7 young one, 3 two-shots, 1 wide, 6 inserts.
+  // 23 shots over ~88 s of voice: median ≈ 3.7 s. Types: 7 mentor, 7 young one, 2 two-shots, 1 wide, 6 inserts.
   const shots = [
     { at: 0,                        kind: 'nesne', prop: 'pencere', opts: FISILTI },                  // hook: the scheming itself, in frame 0
     { at: L(1).start - .3,          kind: 'ikili', ...K },
     { at: W('Toplantıda') - .1,     kind: 'tek', who: 'CIRAK', ots: 'HOCA', ...K },
     { at: L(3).start - .25,         kind: 'tek', who: 'HOCA', ...K },
     { at: L(4).start - .2,          kind: 'yakin', who: 'CIRAK', ...K },
-    { at: W('Bakalım') - .1,        kind: 'ikili', ...K },
     { at: L(5).start - .25,         kind: 'tek', who: 'HOCA', ots: 'CIRAK', ...K },
     { at: W('ona') - .1,            kind: 'nesne', prop: 'pencere', opts: { kimler: ['kirpi', 'kedi'], fisilti: true }, push: 0 },
     { at: L(6).start - .2,          kind: 'yakin', who: 'CIRAK', ...K },

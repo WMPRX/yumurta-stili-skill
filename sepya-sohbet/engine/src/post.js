@@ -11,6 +11,7 @@ export const LOOK = {
   lift: [-.03, -.032, -.034],   // black maps here; slightly below zero = a toe that crushes the darkest tones (measured p5 ≈ 0.05)
   gamma: [1.0, 1.17, 1.36],     // per channel: darks lose blue first, so the shadows turn warm brown (split toning)
   exposure: 1.16,
+  knee: .5, shoulder: .32,       // highlight roll-off on brightness (hue kept): above `knee`, l -> knee + d / (1 + d / shoulder); a cream face or a lit window stays under ~0.75
   vig: .72,                     // vignette strength
   vigIn: .28,                   // where it starts (0 centre … 1 corner)
   scan: .046,                   // scanline amplitude
@@ -23,7 +24,7 @@ export const LOOK = {
 const VS = `attribute vec2 p; varying vec2 uv; void main(){ uv = p * .5 + .5; gl_Position = vec4(p, 0., 1.); }`;
 const FS = `precision highp float;
 varying vec2 uv; uniform sampler2D tex; uniform vec2 res; uniform float frame;
-uniform float sat, exposure, vig, vigIn, scan, scanPeriod, scanSpeed, grain, dim; uniform vec3 gain, lift, gamma;
+uniform float sat, exposure, knee, shoulder, vig, vigIn, scan, scanPeriod, scanSpeed, grain, dim; uniform vec3 gain, lift, gamma;
 float h(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
 void main(){
   vec2 st = vec2(uv.x, 1. - uv.y);
@@ -32,6 +33,8 @@ void main(){
   c = mix(vec3(l), c, sat);
   c = pow(clamp(c, 0., 1.), gamma);
   c = max(lift + c * (gain - lift), 0.);
+  float lc = dot(c, vec3(.2126, .7152, .0722)), dd = max(lc - knee, 0.);     // roll off the brightness, keep the hue
+  c *= (min(lc, knee) + dd / (1. + dd / shoulder)) / max(lc, 1e-4);
   c *= 1. - dim;
   vec2 d = (st - .5) * 2.; float r = length(d) / 1.41421;
   c *= 1. - vig * smoothstep(vigIn, 1.05, r);
@@ -62,7 +65,7 @@ export class Post {
     gl.viewport(0, 0, this.W, this.H);
     gl.bindTexture(gl.TEXTURE_2D, this.tex); gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, src);
     gl.uniform2f(this.u('res'), this.W, this.H); gl.uniform1f(this.u('frame'), frame);
-    for (const k of ['sat', 'exposure', 'vig', 'vigIn', 'scan', 'scanPeriod', 'scanSpeed', 'grain', 'dim']) gl.uniform1f(this.u(k), L[k]);
+    for (const k of ['sat', 'exposure', 'knee', 'shoulder', 'vig', 'vigIn', 'scan', 'scanPeriod', 'scanSpeed', 'grain', 'dim']) gl.uniform1f(this.u(k), L[k]);
     gl.uniform3fv(this.u('gain'), L.gain); gl.uniform3fv(this.u('lift'), L.lift); gl.uniform3fv(this.u('gamma'), Array.isArray(L.gamma) ? L.gamma : [L.gamma, L.gamma, L.gamma]);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
   }

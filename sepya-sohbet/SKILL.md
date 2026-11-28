@@ -73,6 +73,8 @@ Everything there was measured on six reference Shorts (77-95 s, 720×1280, 30 fp
 - **The mentor is the last speaker.** `taslak_ses.py` and `perde.py` pick the mentor as the speaker of the last line. If your video ends on the young one, pass the pitches explicitly.
 - **Turkish word lookups.** `W()` lower-cases with Turkish rules and ignores punctuation except the apostrophe; `W('soğudu.')` and `W('soğudu')` are the same. Repeated words need `W('Ama', 2)`. A missing word throws with its name.
 - **Saturated clothes break the sepia.** The grade keeps 12 % of the original colour (`sat`). A strongly saturated garment pushes chroma p90 over the references (19.3 max); keep paints mid-saturated.
+- **Light faces raise the contrast.** A young one with a cream face in many close-ups pushed contrast to 0.74 (references ≤ 0.62). Keep faces mid-light (`#d8c6aa`); the grade's highlight roll-off (`knee`, `shoulder`) does the rest. Check `kontrast` in `olc.py` whenever one character dominates the shots.
+- **A comment that swallows code.** A `// note` added in the middle of a one-line object literal comments out everything after it on that line (the hedgehog lost its ear, nose and blush colours and the page threw). Put comments on their own line.
 - **Phone screens clip.** A white screen plus the glow goes to pure white after the grade; screens are painted grey-beige (`#cfc6b8`).
 - **Over-the-shoulder size.** A big foreground head covers the speaker. The shape sits at 80 % out to the side and only its edge shows.
 - **Old mix muxed.** `render.mjs` muxes `audio/mix.wav` if it exists. After changing the voice, run `--cues` and `mix.py` BEFORE the final render.

@@ -143,8 +143,8 @@ export const PROPS = {
       g.strokeStyle = '#24160f'; g.lineWidth = 8 * k; g.strokeRect(x * W, y * H, W * .3, H * .16);
     }
     const x = W * .22, y = H * .3, w = W * .56, h = H * .36;
-    g.fillStyle = '#f0c37a'; g.fillRect(x, y, w, h);
-    glow(g, x + w / 2, y + h / 2, W * .6, '#ffcf86', .35);
+    g.fillStyle = '#d8a663'; g.fillRect(x, y, w, h);
+    glow(g, x + w / 2, y + h / 2, W * .6, '#ffcf86', .25);
     // one silhouette (opts.kim) or several (opts.kimler: ['kirpi', 'kedi', ...]); opts.fisilti leans the first toward the second's ear
     const who = o.kimler || [o.kim || 'kirpi'], n = who.length;
     who.forEach((tur, i) => {

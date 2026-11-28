@@ -62,4 +62,5 @@ Sayılar tuttuktan sonra kareler tek tek izlendi. Ölçünün göstermediği, g�
 | Telefon çok uzun, mesajlar okunmuyor | Ekran oranı 2,05, yazı 26 px | Oran 1,95, yazı 36 px |
 | Geniş planda masa / korkuluk kadrajı kaplamıyor | Ön plan kadraj genişliğinde çiziliyordu, geniş planda %66'ya küçülüyor | Ön plan kadrajın 1,6 katı genişlikte |
 | Koyu tonlar gri, renk yoğunluğu düşük (C* 7) | Tek gamalı renk düzeltmesi koyuları nötr bırakıyor | Kanal başına gama (bölünmüş tonlama) ve hafif negatif kaldırma |
+| Kirpi'nin yakın planlarında kontrast yüksek (0,74) | Krem yüz kareyi dolduruyor, renk düzeltmesinde parlak uç sıkışmıyordu | Yüz bir ton koyu (`#d8c6aa`), parlaklık üzerinden ton omzu |
 | Akıl hocası ve öğrencinin perdesi ters | Taslak ses aracı ilk konuşanı akıl hocası sayıyordu | Son satırı söyleyen akıl hocası |
