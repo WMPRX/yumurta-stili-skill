@@ -11,6 +11,8 @@
 # api.elevenlabs.io. Elsewhere set ELEVENLABS_API_KEY.
 # Every line is cached in voice/el_cache/ by (model, voice, tag, text): re-running spends credits only on lines that changed.
 # --yeniden ignores the cache.
+# --denetle[=2]: Whisper listens to every line; a misread word ("birbirimizin" for "birbirinizin", "yürüyen az" for "yürüyemez")
+#   regenerates that line, up to 2 more times. Merged forms ("bitirmekse" for "bitirmek ise") pass.
 #
 # Measured on eleven_v4 (Nov 2026): `voice_settings.speed` has no effect; the pace comes from the audio tag. Plain text runs at
 # 5.2-6.1 syllables/s; "[speaking very slowly, with long pauses]" gives ~4.0 (the references: 3.8-4.6) but lifts a deep voice
@@ -19,7 +21,8 @@ import sys, os, json, hashlib, pathlib, subprocess, urllib.request, urllib.error
 from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from metin import read_script
+from metin import read_script, norm
+import difflib
 
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
 opt = dict((a[2:].split('=', 1) + [''])[:2] for a in sys.argv[1:] if a.startswith('--'))
@@ -62,8 +65,36 @@ def line_audio(i):
             f'rubberband=pitch={2 ** (st / 12):.5f}:formant=preserved', '-f', 'f32le', '-'], input=x.tobytes(), capture_output=True, check=True).stdout, np.float32).copy()
     return x, f.name
 
+def misread(text, mp3):
+    """script words Whisper did not hear (merged / split forms that read the same are accepted)"""
+    y = np.frombuffer(subprocess.run(['ffmpeg', '-v', 'error', '-i', str(mp3), '-ac', '1', '-ar', '16000', '-f', 'f32le', '-'], capture_output=True, check=True).stdout, np.float32)
+    heard = ' '.join(s.text for s in WHISPER.transcribe(y, language='tr', beam_size=5, temperature=0)[0])
+    A = [norm(w) for w in re.sub(r'\[[^\]]*\]', '', text).split() if norm(w)]; B = [norm(w) for w in heard.split() if norm(w)]
+    bad = []
+    for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(a=A, b=B, autojunk=False).get_opcodes():
+        if tag == 'equal': continue
+        a, b = ''.join(A[i1:i2]), ''.join(B[j1:j2])
+        if (i2 - i1) != (j2 - j1) and a and b and difflib.SequenceMatcher(a=a, b=b).ratio() >= .9: continue
+        if a: bad.append(f"{' '.join(A[i1:i2])} -> {' '.join(B[j1:j2]) or '(yok)'}")
+    return bad
+
 with ThreadPoolExecutor(4) as ex:                       # the account allows 5 requests at once; keep one free
     parts = list(ex.map(line_audio, range(len(L))))
+
+if 'denetle' in opt:
+    from faster_whisper import WhisperModel
+    WHISPER = WhisperModel('medium', device='cpu', compute_type='int8')
+    tries = int(opt['denetle'] or 2)
+    for i, l in enumerate(L):
+        f = cache / parts[i][1]
+        for k in range(tries + 1):
+            bad = misread(l['text'], f)
+            if not bad: break
+            print(f"  satır {i} ({l['spk']}): {', '.join(bad)}" + (' -> yeniden' if k < tries else ' -> KALDI, elle dinleyin'))
+            if k < tries:
+                v = V[l['spk']]; t = l['text'].strip()
+                f.write_bytes(request(t if t.startswith('[') else (v.get('etiket', '') + ' ' + t).strip(), v['voice_id']))
+        parts[i] = line_audio(i)
 
 # same loudness for every line (RMS of the voiced part), so the two characters sit level
 def rms(x):

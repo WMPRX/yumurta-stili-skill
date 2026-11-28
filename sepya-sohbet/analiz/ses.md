@@ -44,10 +44,11 @@ Lisanslı bir parça kullanmak için: `python audio/mix.py stories/<ad> --muzik=
 
 | Karakter | Ses | Etiket | Perde | Ölçülen perde | Hız (konuşurken) |
 |---|---|---|---|---|---|
-| Baykuş | Halil (hesaptaki Türkçe profesyonel ses) | `[speaking very slowly, with long pauses]` | −3 yarım ton | 93 Hz (referans 78 – 99) | ~4,1 hece/sn |
+| Baykuş | Seyfullah Kartal (kütüphane; "derin ve boğuk", yaşlı) | `[speaking very slowly, with long pauses]` | — | 116 Hz (referans 78 – 99) | 3,9 hece/sn |
 | Kirpi | ses tasarımıyla üretilen "Kirpi (sepya-sohbet)" | `[nervously, in a higher voice]` | — | 274 Hz (referans 205 – 289) | ~5,3 hece/sn (gergin) |
 
-Toplam 4,38 hece/sn (referans 3,8 – 4,6). Whisper 141 kelimenin 140'ını doğru duydu.
+Toplam 4,28 hece/sn (referans 3,8 – 4,6). İlk seçim Halil'di (−3 yarım tonla 93 Hz); kullanıcı beğenmedi, yapay duyuldu. Yedi aday arasından kulakla Seyfullah Kartal seçildi:
+referanstan biraz ince (116 Hz) ama kaydırmasız ve doğal. İki satır yanlış okundu ("birbirimizin", "yürüyen az"); birer yeniden üretimle düzeldi (`--denetle`).
 
 Denemelerden: aynı cümlede düz metin 5,2 – 6,1 hece/sn; `speed` 0,8 / 0,9 süreyi değiştirmedi; yavaş konuşma etiketi Halil'in perdesini 88'den ~114 Hz'e çıkardı.
 Hesapta ince, genç bir Türkçe ses yoktu (adaylar 97 – 180 Hz). Ses tasarımında "15 yaşında genç" tarifi güvenlik filtresine takıldı; yetişkin bir çizgi film karakteri tarifi geçti, üç önizlemeden biri 236 Hz'di.
