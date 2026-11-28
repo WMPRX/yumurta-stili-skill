@@ -1,0 +1,238 @@
+{
+ "DUR": 68.34,
+ "FPS": 30,
+ "end": 59.14,
+ "shots": [
+  {
+   "a": 0,
+   "b": 2.08,
+   "kind": "nesne",
+   "set": null,
+   "flash": []
+  },
+  {
+   "a": 2.08,
+   "b": 3.57,
+   "kind": "ikili",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 3.57,
+   "b": 5.2,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 5.2,
+   "b": 7.5200000000000005,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 7.5200000000000005,
+   "b": 10.55,
+   "kind": "nesne",
+   "set": null,
+   "flash": []
+  },
+  {
+   "a": 10.55,
+   "b": 12.84,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 12.84,
+   "b": 16.63,
+   "kind": "yakin",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 16.63,
+   "b": 19.18,
+   "kind": "ikili",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 19.18,
+   "b": 24.21,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 24.21,
+   "b": 26.94,
+   "kind": "nesne",
+   "set": null,
+   "flash": []
+  },
+  {
+   "a": 26.94,
+   "b": 29.04,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 29.04,
+   "b": 33.279999999999994,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 33.279999999999994,
+   "b": 36.03,
+   "kind": "yakin",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 36.03,
+   "b": 39.14,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 39.14,
+   "b": 44.98,
+   "kind": "genis",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 44.98,
+   "b": 48.379999999999995,
+   "kind": "nesne",
+   "set": null,
+   "flash": []
+  },
+  {
+   "a": 48.379999999999995,
+   "b": 52.58,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 52.58,
+   "b": 56.26,
+   "kind": "yakin",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 56.26,
+   "b": 58.89,
+   "kind": "nesne",
+   "set": null,
+   "flash": []
+  },
+  {
+   "a": 58.89,
+   "b": 68.34,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  }
+ ],
+ "lines": [
+  {
+   "start": 0,
+   "end": 3.26,
+   "spk": "CIRAK"
+  },
+  {
+   "start": 3.82,
+   "end": 4.5,
+   "spk": "HOCA"
+  },
+  {
+   "start": 5.4,
+   "end": 10.04,
+   "spk": "CIRAK"
+  },
+  {
+   "start": 10.8,
+   "end": 11.88,
+   "spk": "HOCA"
+  },
+  {
+   "start": 13.04,
+   "end": 16.04,
+   "spk": "CIRAK"
+  },
+  {
+   "start": 16.88,
+   "end": 18.28,
+   "spk": "HOCA"
+  },
+  {
+   "start": 19.38,
+   "end": 23.46,
+   "spk": "CIRAK"
+  },
+  {
+   "start": 24.46,
+   "end": 26.38,
+   "spk": "HOCA"
+  },
+  {
+   "start": 27.14,
+   "end": 29.14,
+   "spk": "CIRAK"
+  },
+  {
+   "start": 29.14,
+   "end": 32.58,
+   "spk": "HOCA"
+  },
+  {
+   "start": 33.48,
+   "end": 35.38,
+   "spk": "CIRAK"
+  },
+  {
+   "start": 36.28,
+   "end": 40.86,
+   "spk": "HOCA"
+  },
+  {
+   "start": 41.54,
+   "end": 44.62,
+   "spk": "HOCA"
+  },
+  {
+   "start": 45.18,
+   "end": 47.94,
+   "spk": "HOCA"
+  },
+  {
+   "start": 48.58,
+   "end": 52.26,
+   "spk": "HOCA"
+  },
+  {
+   "start": 52.78,
+   "end": 58.48,
+   "spk": "HOCA"
+  },
+  {
+   "start": 59.14,
+   "end": 61.96,
+   "spk": "HOCA"
+  }
+ ],
+ "music": {
+  "key": "Am",
+  "bpm": 66
+ }
+}

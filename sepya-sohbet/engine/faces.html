@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#3a2a20}</style></head>
+<body><canvas id="c"></canvas>
+<script type="module">
+import { Character, EXPRESSIONS } from '/engine/src/chars.js';
+const q = new URLSearchParams(location.search);
+const species = (q.get('tur') || 'baykus,kirpi').split(',');
+const poses = ['yan', 'masa', 'el', 'cene', 'telefon'];
+const cw = 300, ch = 420, cols = EXPRESSIONS.length;
+const c = document.getElementById('c'); c.width = cw * cols; c.height = ch * species.length * 2;
+const g = c.getContext('2d'); g.fillStyle = '#6b5442'; g.fillRect(0, 0, c.width, c.height);
+g.font = '20px sans-serif'; g.fillStyle = '#fff';
+species.forEach((tur, si) => {
+  const k = new Character({ tur });
+  EXPRESSIONS.forEach((e, i) => {
+    const st = { x: i * cw + cw / 2, y: si * 2 * ch + 260, s: .34, k: .5, expr: e, pose: 'masa', light: 1 };
+    k.body(g, st); g.fillStyle = 'rgba(80,50,30,.9)'; g.fillRect(i * cw, si * 2 * ch + 330, cw, 90); k.arms(g, st);
+    g.fillStyle = '#fff'; g.fillText(`${tur} ${e}`, i * cw + 8, si * 2 * ch + 24);
+  });
+  poses.forEach((p, i) => {
+    const st = { x: i * cw + cw / 2, y: (si * 2 + 1) * ch + 220, s: .26, k: .5, expr: 'notr', pose: p, talk: i === 2 ? .8 : 0, blink: i === 3 ? 1 : 0, light: -1 };
+    k.body(g, st); k.arms(g, st); g.fillStyle = '#fff'; g.fillText(`${p}${i === 2 ? ' +talk' : ''}${i === 3 ? ' +blink' : ''}`, i * cw + 8, (si * 2 + 1) * ch + 24);
+  });
+});
+window.__ready = true;
+</script></body></html>

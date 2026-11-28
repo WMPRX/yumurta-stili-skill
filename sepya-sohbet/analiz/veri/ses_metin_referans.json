@@ -1,0 +1,127 @@
+{
+ "aciklama": "Konuşma: Whisper kelime saatleri; f0_low/f0_high iki konuşmacının perde ortancası (Hz). Altyazı: cap_changes altyazı bandında değişim sayısı (açılış+kapanış), cap_on_share altyazının ekranda kaldığı süre payı.",
+ "konusma": {
+  "r1": {
+   "words": 116,
+   "first_word": 1.48,
+   "last_word": 90.04,
+   "wps": 1.3098464317976513,
+   "speech_share": 0.8125564588979223,
+   "gap_p50": 0.0,
+   "gap_p90": 0.7520000000000033,
+   "gaps_over_1s": 3,
+   "gap_max": 1.5799999999999983,
+   "lines": 19,
+   "f0_low": 91.99970068017603,
+   "f0_high": 247.92365672552896
+  },
+  "r2": {
+   "words": 105,
+   "first_word": 1.080000000000001,
+   "last_word": 74.48,
+   "wps": 1.430517711171662,
+   "speech_share": 0.7509536784741145,
+   "gap_p50": 0.0,
+   "gap_p90": 0.7339999999999999,
+   "gaps_over_1s": 6,
+   "gap_max": 2.1600000000000037,
+   "lines": 15,
+   "f0_low": 81.96241540526373,
+   "f0_high": 245.60973407922594
+  },
+  "r3": {
+   "words": 130,
+   "first_word": 0.0,
+   "last_word": 86.32,
+   "wps": 1.5060240963855422,
+   "speech_share": 0.8213623725671917,
+   "gap_p50": 0.0,
+   "gap_p90": 0.42799999999999594,
+   "gaps_over_1s": 4,
+   "gap_max": 2.039999999999992,
+   "lines": 23,
+   "f0_low": 96.07327609320159,
+   "f0_high": 205.34280616382452
+  },
+  "r4": {
+   "words": 148,
+   "first_word": 0.0,
+   "last_word": 92.4,
+   "wps": 1.6017316017316017,
+   "speech_share": 0.8127705627705627,
+   "gap_p50": 0.0,
+   "gap_p90": 0.6079999999999971,
+   "gaps_over_1s": 3,
+   "gap_max": 1.0799999999999983,
+   "lines": 28,
+   "f0_low": 84.36409749734096,
+   "f0_high": 288.726008659708
+  },
+  "r5": {
+   "words": 114,
+   "first_word": 0.0,
+   "last_word": 78.7,
+   "wps": 1.44853875476493,
+   "speech_share": 0.7838627700127064,
+   "gap_p50": 0.0,
+   "gap_p90": 0.6360000000000006,
+   "gaps_over_1s": 5,
+   "gap_max": 1.3000000000000007,
+   "lines": 16,
+   "f0_low": 77.81037327906058,
+   "f0_high": 247.1809110535238
+  },
+  "r6": {
+   "words": 123,
+   "first_word": 0.0,
+   "last_word": 81.84,
+   "wps": 1.502932551319648,
+   "speech_share": 0.7391251221896382,
+   "gap_p50": 0.0,
+   "gap_p90": 0.6580000000000099,
+   "gaps_over_1s": 4,
+   "gap_max": 4.420000000000002,
+   "lines": 25,
+   "f0_low": 98.60941754994138,
+   "f0_high": 211.06949864449933
+  }
+ },
+ "altyazi": {
+  "r1": {
+   "cap_changes": 213,
+   "cap_on_share": 0.8354626403406891,
+   "cap_first": 1.7333333333333334,
+   "cap_last": 89.96666666666667
+  },
+  "r2": {
+   "cap_changes": 133,
+   "cap_on_share": 0.6226596255400864,
+   "cap_first": 1.6666666666666667,
+   "cap_last": 74.4
+  },
+  "r3": {
+   "cap_changes": 185,
+   "cap_on_share": 0.8313548915268113,
+   "cap_first": 0.3333333333333333,
+   "cap_last": 86.5
+  },
+  "r4": {
+   "cap_changes": 180,
+   "cap_on_share": 0.7527831094049904,
+   "cap_first": 0.2,
+   "cap_last": 92.23333333333333
+  },
+  "r5": {
+   "cap_changes": 144,
+   "cap_on_share": 0.6926174496644295,
+   "cap_first": 0.5,
+   "cap_last": 78.76666666666667
+  },
+  "r6": {
+   "cap_changes": 194,
+   "cap_on_share": 0.7106753812636165,
+   "cap_first": 0.43333333333333335,
+   "cap_last": 81.6
+  }
+ }
+}

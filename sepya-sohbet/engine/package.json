@@ -1,0 +1,11 @@
+{
+  "name": "sepya-sohbet-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sepia 2D dialogue Shorts: Canvas 2D characters and sets, WebGL grade pass, frame-exact capture with puppeteer.",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer-core": "^23.11.1"
+  }
+}

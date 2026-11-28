@@ -1,0 +1,7 @@
+node_modules/
+out/
+stories/*/out/
+stories/*/audio/*.wav
+*.onnx
+*.onnx.json
+__pycache__/
