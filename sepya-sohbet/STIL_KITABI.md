@@ -98,4 +98,18 @@ Ayrıntılı raporlar [`analiz/`](analiz/) içinde, ham sayılar [`analiz/veri/`
 
 ## Örnek videonun ölçümü (Soğuk Çay, aynı araçla)
 
-Örnek video `ornek/soguk-cay.mp4`. Ses taslak (yerel Piper TTS, iki karakter için perde kaydırma). Ölçüm tablosu [`analiz/README.md`](analiz/README.md) sonunda.
+Örnek video `ornek/soguk-cay.mp4` (84,7 sn). Ses taslak: yerel Piper TTS, iki karakter için perde kaydırma (Baykuş ~94 Hz, Kirpi ~180 Hz).
+`tools/olc.py` ile 20 ölçünün 19'u referans aralığında; tarama çizgisinin kayma hızı üst sınırın %1,5 üstünde çıktı ve varsayılan buna göre düzeltildi.
+Tam tablo [`analiz/README.md`](analiz/README.md) içinde.
+
+| Ölçü | Referans (ortanca) | Soğuk Çay |
+|---|---|---|
+| Plan süresi ortanca | 3,85 sn | 3,57 sn |
+| Plan başına itme | %3,8 | %3,5 |
+| Orta parlaklık | 0,155 | 0,141 |
+| a* / b* | 6,7 / 9,8 | 6,8 / 10,4 |
+| C* ortanca / p90 | 12,9 / 17,5 | 12,5 / 18,4 |
+| Köşe / merkez | 0,22 | 0,21 |
+| Altyazı merkezi / harf yüksekliği | 0,764 / 0,0281 | 0,764 / 0,0276 |
+| Ses yüksekliği | −14,1 LUFS | −14,1 LUFS |
+| Hece/sn (konuşurken) | 4,1 | 4,3 |

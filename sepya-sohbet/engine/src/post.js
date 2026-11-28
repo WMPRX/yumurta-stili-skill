@@ -15,7 +15,7 @@ export const LOOK = {
   vigIn: .28,                   // where it starts (0 centre … 1 corner)
   scan: .046,                   // scanline amplitude
   scanPeriod: .014453,          // fraction of the height
-  scanSpeed: .00042,            // fraction of the height per frame (downwards)
+  scanSpeed: .00036,            // fraction of the height per frame (downwards); measures ~1.07× this after encoding
   grain: .012,
   dim: 0,                       // end card: 0..1 darkens everything drawn so far
 };

@@ -36,7 +36,7 @@ c = mix(gri(c), c, sat)                 sat = 0,12      (renklerin %12'si kalıy
 c = c ^ gamma                            gamma = (1,0  1,17  1,36)   koyu tonlarda mavi önce düşüyor: bölünmüş tonlama
 c = lift + c · (gain − lift)             gain = (0,97  0,85  0,79)   lift = (−0,03  −0,032  −0,034)
 c = c · (1 − 0,72 · smoothstep(0,28; 1,05; r))      vinyet
-c = c · (1 + 0,046 · sin(2π (y − kare · 0,00042 · H) / (0,014453 · H)))      tarama çizgileri
+c = c · (1 + 0,046 · sin(2π (y − kare · 0,00036 · H) / (0,014453 · H)))      tarama çizgileri
 ```
 
 Bu değerler örnek videoda 22 karelik ölçümle bulundu: orta parlaklık 0,145, p5 0,055, a* 6,6, b* 10,5, C* 12,2 / 18,4, köşe 0,22.
@@ -59,4 +59,5 @@ Tarama çizgileri altyazının ve filigranın altında: yazılar temiz.
 
 ## Örnek videoda (Soğuk Çay)
 
-Bkz. [README.md](README.md) sonundaki tablo.
+Orta parlaklık 0,141 · p5 0,051 · kontrast 0,61 · a* 6,8 · b* 10,4 · C* 12,5 / 18,4 · köşe 0,21 · tarama periyodu 0,01445, genliği 0,037: hepsi aralıkta.
+Tam tablo: [README.md](README.md).

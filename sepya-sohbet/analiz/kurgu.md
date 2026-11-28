@@ -72,4 +72,5 @@ ağır cümlesinde büyük bir hareket (`push: .15 – .35`).
 
 ## Örnek videoda (Soğuk Çay)
 
-Bkz. [README.md](README.md) sonundaki tablo.
+21 plan; ortanca 3,57 sn; dakikada 15,7 kesme; plan başına itme %3,5; içeri iten planlar %86 (biri duruyor, biri geri çekiliyor, biri %22 itiyor);
+türler: akıl hocası 7, öğrenci 6, nesne 5, ikili 2, geniş 1; ilk plan telefon (nesne), son plan akıl hocası; kararmadan sona 8,0 sn.
