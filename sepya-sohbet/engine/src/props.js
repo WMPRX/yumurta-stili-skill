@@ -5,6 +5,8 @@ import { rrect, fillStroke, rgba, shade, canvas, hash } from './util.js';
 import { LINE } from './chars.js';
 import { teaGlass } from './sets.js';
 import { steam, glow } from './fx.js';
+import { board, pieces, piece, POZ } from './chess.js';
+import { easeShot } from './util.js';
 
 function bokeh(g, W, H, seed = 1, col = '#f2c47a', n = 14, top = .05, bottom = .5) {
   for (let i = 0; i < n; i++) {
@@ -17,6 +19,19 @@ function soft(key, W, H, blur, paint) {        // paint once, blur once, reuse
   const k = `${key}|${W}|${blur}`; if (blurCache.has(k)) return blurCache.get(k);
   const a = canvas(W, H); paint(a.getContext('2d'));
   const b = canvas(W, H); const g = b.getContext('2d'); g.filter = `blur(${blur}px)`; g.drawImage(a, 0, 0); blurCache.set(k, b); return b;
+}
+
+function silhouette(g, cx, cy, r, tur, lean, h) {
+  g.save(); g.fillStyle = '#3a2418';
+  g.beginPath(); g.ellipse(cx, cy + r * 1.6, r * 1.8, r * 1.4, 0, Math.PI, 0); g.fill(); g.fillRect(cx - r * 1.8, cy + r * 1.6, r * 3.6, h);
+  g.translate(cx, cy); g.rotate(lean); g.translate(-cx, -cy);
+  const hx = cx + lean * r * 1.2;
+  g.beginPath(); g.arc(hx, cy - r, r, 0, 7); g.fill();
+  if (tur === 'kirpi') for (let a = -2.8; a < -.3; a += .28) { g.beginPath(); g.moveTo(hx + Math.cos(a) * r, cy - r + Math.sin(a) * r); g.lineTo(hx + Math.cos(a + .14) * r * 1.5, cy - r + Math.sin(a + .14) * r * 1.5); g.lineTo(hx + Math.cos(a + .28) * r, cy - r + Math.sin(a + .28) * r); g.fill(); }
+  else if (tur === 'baykus') for (const s of [-1, 1]) { g.beginPath(); g.moveTo(hx + s * r * .5, cy - r * 1.7); g.lineTo(hx + s * r * 1.1, cy - r * 2.5); g.lineTo(hx + s * r, cy - r * 1.3); g.fill(); }
+  else if (tur === 'kedi') for (const s of [-1, 1]) { g.beginPath(); g.moveTo(hx + s * r * .25, cy - r * 1.85); g.lineTo(hx + s * r * .8, cy - r * 2.35); g.lineTo(hx + s * r * .95, cy - r * 1.4); g.fill(); }
+  if (lean) { g.beginPath(); g.ellipse(hx + r * .95, cy - r * .7, r * .3, r * .22, 0, 0, 7); g.fill(); }   // a hand cupped at the mouth
+  g.restore();
 }
 
 export const PROPS = {
@@ -130,13 +145,42 @@ export const PROPS = {
     const x = W * .22, y = H * .3, w = W * .56, h = H * .36;
     g.fillStyle = '#f0c37a'; g.fillRect(x, y, w, h);
     glow(g, x + w / 2, y + h / 2, W * .6, '#ffcf86', .35);
-    g.fillStyle = '#3a2418';
-    const cx = x + w * .5, cy = y + h * .62, r = w * .14;
-    g.beginPath(); g.arc(cx, cy - r, r, 0, 7); g.fill(); g.beginPath(); g.ellipse(cx, cy + r * 1.6, r * 1.8, r * 1.4, 0, Math.PI, 0); g.fill(); g.fillRect(cx - r * 1.8, cy + r * 1.6, r * 3.6, h);
-    if ((o.kim || 'kirpi') === 'kirpi') for (let a = -2.8; a < -.3; a += .28) { g.beginPath(); g.moveTo(cx + Math.cos(a) * r, cy - r + Math.sin(a) * r); g.lineTo(cx + Math.cos(a + .14) * r * 1.5, cy - r + Math.sin(a + .14) * r * 1.5); g.lineTo(cx + Math.cos(a + .28) * r, cy - r + Math.sin(a + .28) * r); g.fill(); }
-    else for (const s of [-1, 1]) { g.beginPath(); g.moveTo(cx + s * r * .5, cy - r * 1.7); g.lineTo(cx + s * r * 1.1, cy - r * 2.5); g.lineTo(cx + s * r, cy - r * 1.3); g.fill(); }
+    // one silhouette (opts.kim) or several (opts.kimler: ['kirpi', 'kedi', ...]); opts.fisilti leans the first toward the second's ear
+    const who = o.kimler || [o.kim || 'kirpi'], n = who.length;
+    who.forEach((tur, i) => {
+      const r = w * (n > 1 ? .11 : .14);
+      let cx = x + w * (n > 1 ? .27 + .46 * i / (n - 1) : .5), cy = y + h * .64;
+      const lean = o.fisilti && i === 0 ? .32 : 0;
+      if (lean) cx += r * .35;
+      silhouette(g, cx, cy, r, tur, lean, h);
+    });
     g.strokeStyle = '#2a1a12'; g.lineWidth = 14 * k; g.strokeRect(x, y, w, h);
     g.lineWidth = 9 * k; g.beginPath(); g.moveTo(x + w / 2, y); g.lineTo(x + w / 2, y + h); g.moveTo(x, y + h * .4); g.lineTo(x + w, y + h * .4); g.stroke();
     g.fillStyle = '#e9e4dc'; g.fillRect(x - 30 * k, y + h, w + 60 * k, 22 * k); g.strokeStyle = LINE; g.lineWidth = 4 * k; g.strokeRect(x - 30 * k, y + h, w + 60 * k, 22 * k);
+  },
+
+  // the chess board up close: opts.zipla = seconds into the shot when the white knight jumps (2,5) -> (3,3); opts.el = colour of the hand that moves it
+  satranc(g, t, W, H, o = {}, ctx) {
+    const k = W / 1080;
+    g.drawImage(soft('satranc-bg', W, H, 22 * k, b => { b.fillStyle = '#2f1d14'; b.fillRect(0, 0, W, H); bokeh(b, W, H, 21, '#f2c47a', 16, .02, .45); }), 0, 0);
+    g.fillStyle = '#3a2418'; g.fillRect(0, H * .36, W, H);
+    const map = board(g, { cx: W * .62, nearY: H * 1.25, farY: H * .36, nearW: W * 2.6, farW: W * 1.05, k, lw: 5 });
+    const KN = 6, from = [2, 5], to = [3, 3];
+    const z = o.zipla ?? 1e9, u = Math.min(1, Math.max(0, (t - z) / .7));
+    pieces(g, map, POZ, 1.25, k, 5, KN);
+    const a = map(...from), b = map(...to), e = easeShot(u);
+    const x = a[0] + (b[0] - a[0]) * e, base = a[1] + (b[1] - a[1]) * e, y = base - Math.sin(Math.PI * u) * H * .1, hh = (a[2] + (b[2] - a[2]) * e) * 1.45;
+    if (u > 0 && u < 1) { g.beginPath(); g.ellipse(x, base, hh * .3, hh * .07, 0, 0, 7); g.fillStyle = 'rgba(20,10,5,.35)'; g.fill(); }
+    piece(g, 'at', x, y, hh, true, k, 6);
+    if (o.el && t > z - .6 && t < z + 1.1) {                // the hand that plays it: a sleeve from the top right, a mitten pinching the knight's head
+      const hx = x + hh * .02, hy = y - hh * .92;
+      g.save(); g.translate(hx, hy); g.rotate(-.62);
+      rrect(g, 60 * k, -95 * k, 1200 * k, 190 * k, 80 * k); fillStroke(g, o.kol || '#4f5140', LINE, 7 * k);
+      rrect(g, 40 * k, -105 * k, 70 * k, 210 * k, 26 * k); fillStroke(g, '#3a3b2f', LINE, 6 * k);           // cuff
+      g.beginPath(); g.ellipse(-10 * k, 0, 105 * k, 85 * k, 0, 0, 7); fillStroke(g, o.el, LINE, 7 * k);
+      g.beginPath(); g.ellipse(-80 * k, 60 * k, 40 * k, 26 * k, .6, 0, 7); fillStroke(g, o.el, LINE, 6 * k);    // thumb
+      g.strokeStyle = LINE; g.lineWidth = 4 * k; for (const d of [-40, 0, 40]) { g.beginPath(); g.arc(-95 * k, d * k - 20 * k, 26 * k, -1.3, 1.3); g.stroke(); }
+      g.restore();
+    }
   },
 };

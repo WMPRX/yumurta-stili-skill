@@ -4,6 +4,7 @@
 // Paint in ordinary colours: the grade (post.js) turns everything sepia. Warm = lamps and lit windows, cool = night.
 import { rrect, blob, fillStroke, shade, mix, rgba, rng, canvas } from './util.js';
 import { LINE } from './chars.js';
+import { board, pieces, POZ } from './chess.js';
 
 export const PAD = .3, SPAN = 1 + 2 * PAD;          // backdrop covers [-PAD, 1+PAD] in u and v
 
@@ -112,13 +113,17 @@ export const SETS = {
       frame(P, -.22, .08, .2, .26, '#7b6a55'); frame(P, 1.02, .1, .18, .22, '#8a7860');
       bentwoodChair(P, .3, .45, 1.2); bentwoodChair(P, .7, .45, 1.2);
     },
-    fore(g, W, H, k, kind) {
+    fore(g, W, H, k, kind, shot) {
       if (kind === 'tek' || kind === 'yakin') return;     // singles are framed above the table
       tableTop(g, W, H, .79, k);
       teaGlass(g, W * .3, H * .865, H * .085, k); teaGlass(g, W * .7, H * .865, H * .085, k, .55);
-      // sugar bowl
-      g.beginPath(); g.ellipse(W * .5, H * .87, W * .05, H * .012, 0, 0, 7); fillStroke(g, '#cfc3ad', LINE, 2.4 * k);
-      g.beginPath(); g.moveTo(W * .455, H * .87); g.bezierCurveTo(W * .455, H * .83, W * .545, H * .83, W * .545, H * .87); fillStroke(g, 'rgba(230,222,208,.6)', LINE, 2.4 * k);
+      if (shot && shot.masa === 'satranc') {                // a small chess board between the glasses
+        const map = board(g, { cx: W * .5, nearY: H * .885, farY: H * .835, nearW: W * .34, farW: W * .26, k, lw: 2.4 });
+        pieces(g, map, POZ, 1.5, k, 1.8);
+      } else {                                              // sugar bowl
+        g.beginPath(); g.ellipse(W * .5, H * .87, W * .05, H * .012, 0, 0, 7); fillStroke(g, '#cfc3ad', LINE, 2.4 * k);
+        g.beginPath(); g.moveTo(W * .455, H * .87); g.bezierCurveTo(W * .455, H * .83, W * .545, H * .83, W * .545, H * .87); fillStroke(g, 'rgba(230,222,208,.6)', LINE, 2.4 * k);
+      }
     },
   },
 

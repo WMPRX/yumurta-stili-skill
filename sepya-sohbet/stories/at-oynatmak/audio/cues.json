@@ -1,0 +1,271 @@
+{
+ "DUR": 94.42,
+ "FPS": 30,
+ "end": 84.62,
+ "shots": [
+  {
+   "a": 0,
+   "b": 4.5,
+   "kind": "nesne",
+   "set": null,
+   "flash": []
+  },
+  {
+   "a": 4.5,
+   "b": 9.66,
+   "kind": "ikili",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 9.66,
+   "b": 12.33,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 12.33,
+   "b": 14.780000000000001,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 14.780000000000001,
+   "b": 18.419999999999998,
+   "kind": "yakin",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 18.419999999999998,
+   "b": 20.91,
+   "kind": "ikili",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 20.91,
+   "b": 23.419999999999998,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 23.419999999999998,
+   "b": 27.28,
+   "kind": "nesne",
+   "set": null,
+   "flash": []
+  },
+  {
+   "a": 27.28,
+   "b": 29.75,
+   "kind": "yakin",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 29.75,
+   "b": 35.339999999999996,
+   "kind": "nesne",
+   "set": null,
+   "flash": []
+  },
+  {
+   "a": 35.339999999999996,
+   "b": 39.07,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 39.07,
+   "b": 43.3,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 43.3,
+   "b": 46.8,
+   "kind": "nesne",
+   "set": null,
+   "flash": []
+  },
+  {
+   "a": 46.8,
+   "b": 51.47,
+   "kind": "yakin",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 51.47,
+   "b": 56.4,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 56.4,
+   "b": 59.62,
+   "kind": "genis",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 59.62,
+   "b": 63.4,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 63.4,
+   "b": 67.6,
+   "kind": "nesne",
+   "set": null,
+   "flash": []
+  },
+  {
+   "a": 67.6,
+   "b": 70.92,
+   "kind": "yakin",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 70.92,
+   "b": 73.92,
+   "kind": "ikili",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 73.92,
+   "b": 76.80000000000001,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 76.80000000000001,
+   "b": 79.57,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  },
+  {
+   "a": 79.57,
+   "b": 84.37,
+   "kind": "nesne",
+   "set": null,
+   "flash": []
+  },
+  {
+   "a": 84.37,
+   "b": 94.42,
+   "kind": "tek",
+   "set": "kafe",
+   "flash": []
+  }
+ ],
+ "lines": [
+  {
+   "start": 0,
+   "end": 4.02,
+   "spk": "CIRAK"
+  },
+  {
+   "start": 4.8,
+   "end": 5.96,
+   "spk": "HOCA"
+  },
+  {
+   "start": 6.8,
+   "end": 11.8,
+   "spk": "CIRAK"
+  },
+  {
+   "start": 12.58,
+   "end": 14.04,
+   "spk": "HOCA"
+  },
+  {
+   "start": 14.98,
+   "end": 20.14,
+   "spk": "CIRAK"
+  },
+  {
+   "start": 21.16,
+   "end": 26.68,
+   "spk": "HOCA"
+  },
+  {
+   "start": 27.48,
+   "end": 29.08,
+   "spk": "CIRAK"
+  },
+  {
+   "start": 30,
+   "end": 34.84,
+   "spk": "HOCA"
+  },
+  {
+   "start": 35.54,
+   "end": 38.62,
+   "spk": "CIRAK"
+  },
+  {
+   "start": 39.32,
+   "end": 46.04,
+   "spk": "HOCA"
+  },
+  {
+   "start": 47,
+   "end": 50.96,
+   "spk": "CIRAK"
+  },
+  {
+   "start": 51.72,
+   "end": 55.9,
+   "spk": "HOCA"
+  },
+  {
+   "start": 56.6,
+   "end": 63.04,
+   "spk": "HOCA"
+  },
+  {
+   "start": 63.6,
+   "end": 67.3,
+   "spk": "HOCA"
+  },
+  {
+   "start": 67.8,
+   "end": 73.56,
+   "spk": "HOCA"
+  },
+  {
+   "start": 74.12,
+   "end": 79.08,
+   "spk": "HOCA"
+  },
+  {
+   "start": 79.82,
+   "end": 84.62,
+   "spk": "HOCA"
+  },
+  {
+   "start": 84.62,
+   "end": 88,
+   "spk": "HOCA"
+  }
+ ],
+ "music": {
+  "key": "Dm",
+  "bpm": 64
+ }
+}

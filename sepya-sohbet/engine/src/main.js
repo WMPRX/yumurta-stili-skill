@@ -125,7 +125,7 @@ try {
     });
     g.save(); cam(1); comp();
     for (const c of states) c.ch.body(g, c.st);
-    set.fore(g, W, H, K, s.kind);
+    set.fore(g, W, H, K, s.kind, s);
     for (const c of states) c.ch.arms(g, c.st);
     g.restore();
     // over-the-shoulder foreground: the other character, large and out of focus, in a lower corner (parallax 1.15)

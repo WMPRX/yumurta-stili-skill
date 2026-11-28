@@ -5,7 +5,7 @@ description: Make a 75-95 s vertical "sepia dialogue" Short - two flat 2D animal
 
 # Sepia dialogue Short (Canvas 2D, frame capture)
 
-Sample: `stories/soguk-cay/` (79 s of voice + end card, Turkish, an owl mentor and a hedgehog; draft voice from local Piper TTS).
+Samples: `stories/soguk-cay/` (an unsent message and a cold glass of tea) and `stories/at-oynatmak/` (scheming behind each other's backs, told through the chess knight). Both Turkish, an owl mentor and a hedgehog, draft voice from local Piper TTS.
 Finished video: `ornek/soguk-cay.mp4`.
 
 Measured style targets: `STIL_KITABI.md` (summary) and `analiz/` (six reports, raw numbers in `analiz/veri/`). Read the style book before writing anything.
@@ -46,7 +46,8 @@ Everything there was measured on six reference Shorts (77-95 s, 720×1280, 30 fp
      - `kind`: `ikili` (both at the table; mentor left, young one right), `tek` (one character, head 58 % of the width, eyes at 42 %), `yakin` (close-up, head 88 %), `genis` (the two-shot from further away), `nesne` (insert).
      - `ots`: in a single, the other character as a soft out-of-focus shoulder in the lower corner (about a third of the singles in the references).
      - `set`: `kafe` (window on the night city, pendant lamp, round table with tea), `sokak` (apartment facade with lit windows, street lamp, snowy ledge, snow), `oda` (wallpaper, glass cabinet with cups, floor lamp, curtains, rainy window). New sets: add to `engine/src/sets.js` (`back(canvas)` paints once, `fore(g, W, H, k, kind)` draws the table/ledge, `lights` gives the glows).
-     - `prop` for inserts: `cay` (`{ buhar, dolu, el }`), `telefon` (`{ kimden, mesajlar: [{ ben, metin } | { taslak: true, metin }], saat, metin, el, kol }`), `fotograf` (`{ kafalar }`), `pencere` (`{ kim }`), or your own function `(g, t, W, H, opts) => {}`.
+     - `prop` for inserts: `cay` (`{ buhar, dolu, el }`), `telefon` (`{ kimden, mesajlar: [{ ben, metin } | { taslak: true, metin }], saat, metin, el, kol }`), `fotograf` (`{ kafalar }`), `pencere` (`{ kim }` or `{ kimler: ['kedi', 'kirpi'], fisilti: true }` for someone whispering into someone's ear), `satranc` (`{ zipla, el, kol }`: the white knight jumps `zipla` s into the shot, a hand of colour `el` plays it), or your own function `(g, t, W, H, opts) => {}`.
+     - `masa: 'satranc'` on a `kafe` shot puts a small chess board on the table in the two-shots (`engine/src/chess.js`).
      - `fx`: `kar`, `yagmur`, `toz` (default from the set). `flash: [t]`: a lightning double-flash at t (`mix.py` adds thunder).
    - **Expressions** `{ at, who, expr }`: `notr`, `bilge` (the mentor's default half-lid), `gulumse`, `uzgun`, `endiseli`, `saskin`, `dusunceli`, `kizgin`, `utangac`. They land two frames before their word. Change the young one's face at least once per line of theirs.
    - **Poses** `{ at, who, pose }`: `yan`, `masa` (default at a table), `el` (hand raised), `cene` (hand on chin), `telefon` (phone in both hands).

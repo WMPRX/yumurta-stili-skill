@@ -21,10 +21,11 @@ Ses için iki yol var: taslak ses yerel TTS ile üretiliyor; kendi kaydınız va
 | `SKILL.md` | Claude için skill: iş akışı, kurallar, tuzaklar |
 | `STIL_KITABI.md` | Altı referans videodan ölçülen sayıların özeti: metin, kurgu, kamera, renk, doku, karakter, yazı, ses |
 | `analiz/` | Altı ayrıntılı rapor (metin, kurgu, renk, karakter, altyazı, ses) ve `veri/` altında ham ölçümler (JSON) |
-| `engine/` | `render.mjs` (kare yakalama, kontrol kolajları), `faces.mjs` (karakter sayfası), `src/chars.js` (Baykuş, Kirpi: 9 ifade, 5 poz), `src/sets.js` (kafe, sokak, oda), `src/props.js` (telefon, çay, fotoğraf, pencere), `src/fx.js` (kar, yağmur, toz, buhar, hale, huzme, şimşek), `src/post.js` (sepya, vinyet, tarama çizgileri), `src/overlay.js` (altyazı, filigran, kapanış yazısı), `src/main.js` (plan seçimi, kamera, ağız senkronu, kapanış kartı) |
+| `engine/` | `render.mjs` (kare yakalama, kontrol kolajları), `faces.mjs` (karakter sayfası), `src/chars.js` (Baykuş, Kirpi: 9 ifade, 5 poz), `src/sets.js` (kafe, sokak, oda), `src/props.js` (telefon, çay, fotoğraf, pencere, satranç), `src/chess.js` (satranç tahtası ve taşlar), `src/fx.js` (kar, yağmur, toz, buhar, hale, huzme, şimşek), `src/post.js` (sepya, vinyet, tarama çizgileri), `src/overlay.js` (altyazı, filigran, kapanış yazısı), `src/main.js` (plan seçimi, kamera, ağız senkronu, kapanış kartı) |
 | `tools/` | `kelime_saat.py` (ses → konuşmacılı kelime saatleri), `taslak_ses.py` (yerel TTS ile taslak ses), `perde.py` (tek kayıttan iki karakter sesi), `zarf.py` (ağız senkronu), `olc.py` (videoyu referanslarla aynı yöntemle ölçer) |
 | `audio/mix.py` | Sentez piyano + ambiyans + miks, −14 LUFS |
 | `stories/soguk-cay/` | Örnek hikâye: `voice/script.txt`, `story.js`, ses ve kelime saatleri |
+| `stories/at-oynatmak/` | İkinci hikâye: birbirinin arkasından iş çevirmek, satranç atı benzetmesiyle |
 | `ornek/` | Örnek video ve karakter sayfası |
 
 ## Kurulum
