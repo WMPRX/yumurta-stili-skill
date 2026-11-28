@@ -22,7 +22,7 @@ Ses için iki yol var: taslak ses yerel TTS ile üretiliyor; kendi kaydınız va
 | `STIL_KITABI.md` | Altı referans videodan ölçülen sayıların özeti: metin, kurgu, kamera, renk, doku, karakter, yazı, ses |
 | `analiz/` | Altı ayrıntılı rapor (metin, kurgu, renk, karakter, altyazı, ses) ve `veri/` altında ham ölçümler (JSON) |
 | `engine/` | `render.mjs` (kare yakalama, kontrol kolajları), `faces.mjs` (karakter sayfası), `src/chars.js` (Baykuş, Kirpi: 9 ifade, 5 poz), `src/sets.js` (kafe, sokak, oda), `src/props.js` (telefon, çay, fotoğraf, pencere, satranç), `src/chess.js` (satranç tahtası ve taşlar), `src/fx.js` (kar, yağmur, toz, buhar, hale, huzme, şimşek), `src/post.js` (sepya, vinyet, tarama çizgileri), `src/overlay.js` (altyazı, filigran, kapanış yazısı), `src/main.js` (plan seçimi, kamera, ağız senkronu, kapanış kartı) |
-| `tools/` | `kelime_saat.py` (ses → konuşmacılı kelime saatleri), `taslak_ses.py` (yerel TTS ile taslak ses), `perde.py` (tek kayıttan iki karakter sesi), `zarf.py` (ağız senkronu), `olc.py` (videoyu referanslarla aynı yöntemle ölçer) |
+| `tools/` | `kelime_saat.py` (ses → konuşmacılı kelime saatleri), `taslak_ses.py` (yerel TTS ile taslak ses), `elevenlabs_ses.py` (ElevenLabs v4 ile iki karakterin sesi, satır satır, önbellekli), `perde.py` (tek kayıttan iki karakter sesi), `zarf.py` (ağız senkronu), `olc.py` (videoyu referanslarla aynı yöntemle ölçer) |
 | `audio/mix.py` | Sentez piyano + ambiyans + miks, −14 LUFS |
 | `stories/soguk-cay/` | Örnek hikâye: `voice/script.txt`, `story.js`, ses ve kelime saatleri |
 | `stories/at-oynatmak/` | İkinci hikâye: birbirinin arkasından iş çevirmek, satranç atı benzetmesiyle |
@@ -51,6 +51,8 @@ Ses için iki yol var: taslak ses yerel TTS ile üretiliyor; kendi kaydınız va
 # 1. Metin: stories/<ad>/voice/script.txt, her satır "ETİKET: cümle"; son satırı akıl hocası söyler
 # 2. Ses (taslak ya da kendi kaydınız)
 python tools/taslak_ses.py stories/<ad>/voice/script.txt stories/<ad>/voice/voice.wav --hiz=0.85
+#    ya da ElevenLabs (voice/sesler.json: her etikete bir ses, bir ifade etiketi, istenirse perde):
+#    python tools/elevenlabs_ses.py stories/<ad>/voice/script.txt stories/<ad>/voice/sesler.json stories/<ad>/voice/voice.wav
 #    kendi kaydınız (iki rolü tek seferde okuyun):
 #    python tools/kelime_saat.py ham.wav script.txt ham.json && python tools/perde.py ham.wav ham.json voice.wav '{"HOCA": -4, "CIRAK": 8}'
 python tools/kelime_saat.py stories/<ad>/voice/voice.wav stories/<ad>/voice/script.txt stories/<ad>/voice/words.json

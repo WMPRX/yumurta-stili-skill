@@ -39,6 +39,11 @@ Everything there was measured on six reference Shorts (77-95 s, 720×1280, 30 fp
 4. **Voice.**
    - Draft first (so shots can be timed before recording): `python tools/taslak_ses.py script.txt voice.wav --hiz=0.85` (local Piper TTS; download the voice once, see README).
    - Own recording, both roles in one take: `python tools/kelime_saat.py raw.wav script.txt raw_words.json` → `python tools/perde.py raw.wav raw_words.json voice.wav '{"HOCA": -4, "CIRAK": 8}'` (male voice; for a female voice try -12 / +3).
+   - ElevenLabs (when the user gives an API key; in a cloud session ask for it with the credential form for `api.elevenlabs.io`, header `xi-api-key`, never in chat):
+     `python tools/elevenlabs_ses.py script.txt sesler.json voice.wav` with `voice/sesler.json` = `{ TAG: { voice_id, etiket, perde } }`.
+     Pick voices by measurement: list the account's voices (`GET /v2/voices`), render one test line per candidate, measure pitch (pYIN) and syllables/s, keep the closest to the targets (mentor ≈ 88 Hz, young one ≈ 245 Hz).
+     If no voice fits, design one (`POST /v1/text-to-voice/design`, model `eleven_ttv_v3`) and save the best preview (`POST /v1/text-to-voice`). Describe an ADULT character ("a shy young adult man with a light, higher-pitched voice"): a description of a teenager is blocked by the safety filter.
+     On `eleven_v4` the `speed` setting does nothing; set the pace with the audio tag (`[speaking very slowly, with long pauses]` ≈ 4.0 syllables/s). The tag lifts a deep voice, so lower it with `"perde": -3`. The account allows 5 requests at once; the tool uses 4 and caches every line.
    - Then always: `python tools/kelime_saat.py voice.wav script.txt words.json` (keeps the script's spelling, adds speaker and line to every word; prints words/s and syllables/s) and `python tools/zarf.py voice.wav env.json` (lip-flap envelope).
 5. **Story file** `stories/<name>/story.js` (copy the sample). It exports `NAME`, `FPS`, `BRAND { ad }`, `CAST { TAG: { tur, renk } }`, `MENTOR`, `MUSIC { key, bpm }` and `build({ W, L })` returning `{ shots, expr, poz, end: { at }, look }`.
    - **Shot**: `{ at, set, kind, who, ots, push, focus, pose, prop, opts, fx, flash, look }`.

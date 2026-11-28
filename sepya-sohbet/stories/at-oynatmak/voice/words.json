@@ -5,987 +5,987 @@
    "spk": "CIRAK",
    "line": 0,
    "start": 0.0,
-   "end": 0.62
+   "end": 0.6
   },
   {
    "word": "arkadaşım",
    "spk": "CIRAK",
    "line": 0,
-   "start": 0.62,
-   "end": 1.44
+   "start": 0.6,
+   "end": 1.24
   },
   {
    "word": "müdüre",
    "spk": "CIRAK",
    "line": 0,
-   "start": 1.44,
-   "end": 1.86
+   "start": 1.24,
+   "end": 1.66
   },
   {
    "word": "benim",
    "spk": "CIRAK",
    "line": 0,
-   "start": 1.86,
-   "end": 2.1
+   "start": 1.66,
+   "end": 1.86
   },
   {
    "word": "hakkımda",
    "spk": "CIRAK",
    "line": 0,
-   "start": 2.1,
-   "end": 2.88
+   "start": 1.86,
+   "end": 2.3
   },
   {
    "word": "yalan",
    "spk": "CIRAK",
    "line": 0,
-   "start": 2.88,
-   "end": 3.24
+   "start": 2.3,
+   "end": 2.6
   },
   {
    "word": "söylemiş.",
    "spk": "CIRAK",
    "line": 0,
-   "start": 3.24,
-   "end": 4.02
+   "start": 2.6,
+   "end": 3.72
   },
   {
    "word": "Nereden",
    "spk": "HOCA",
    "line": 1,
-   "start": 4.8,
-   "end": 5.5
+   "start": 4.24,
+   "end": 4.88
   },
   {
    "word": "duydun?",
    "spk": "HOCA",
    "line": 1,
-   "start": 5.5,
-   "end": 5.96
+   "start": 4.88,
+   "end": 5.64
   },
   {
    "word": "Başka",
    "spk": "CIRAK",
    "line": 2,
-   "start": 6.8,
-   "end": 7.36
+   "start": 6.64,
+   "end": 7.06
   },
   {
    "word": "bir",
    "spk": "CIRAK",
    "line": 2,
-   "start": 7.36,
-   "end": 7.52
+   "start": 7.06,
+   "end": 7.26
   },
   {
    "word": "arkadaş",
    "spk": "CIRAK",
    "line": 2,
-   "start": 7.52,
-   "end": 8.06
+   "start": 7.26,
+   "end": 7.56
   },
   {
    "word": "anlattı.",
    "spk": "CIRAK",
    "line": 2,
-   "start": 8.06,
-   "end": 9.1
+   "start": 7.56,
+   "end": 8.4
   },
   {
    "word": "Toplantıda",
    "spk": "CIRAK",
    "line": 2,
-   "start": 9.76,
-   "end": 10.64
+   "start": 8.56,
+   "end": 9.14
   },
   {
    "word": "beni",
    "spk": "CIRAK",
    "line": 2,
-   "start": 10.64,
-   "end": 10.9
+   "start": 9.14,
+   "end": 9.3
   },
   {
    "word": "suçlamış.",
    "spk": "CIRAK",
    "line": 2,
-   "start": 10.9,
-   "end": 11.8
+   "start": 9.3,
+   "end": 10.32
   },
   {
    "word": "Peki",
    "spk": "HOCA",
    "line": 3,
-   "start": 12.58,
-   "end": 12.8
+   "start": 10.64,
+   "end": 11.22
   },
   {
    "word": "sen",
    "spk": "HOCA",
    "line": 3,
-   "start": 12.8,
-   "end": 13.14
+   "start": 11.22,
+   "end": 11.96
   },
   {
    "word": "ne",
    "spk": "HOCA",
    "line": 3,
-   "start": 13.14,
-   "end": 13.44
+   "start": 11.96,
+   "end": 12.52
   },
   {
    "word": "yapacaksın?",
    "spk": "HOCA",
    "line": 3,
-   "start": 13.44,
-   "end": 14.04
+   "start": 12.52,
+   "end": 13.1
   },
   {
    "word": "Ben",
    "spk": "CIRAK",
    "line": 4,
-   "start": 14.98,
-   "end": 15.32
+   "start": 13.92,
+   "end": 14.2
   },
   {
    "word": "de",
    "spk": "CIRAK",
    "line": 4,
-   "start": 15.32,
-   "end": 15.52
+   "start": 14.2,
+   "end": 14.34
   },
   {
    "word": "onun",
    "spk": "CIRAK",
    "line": 4,
-   "start": 15.52,
-   "end": 15.76
+   "start": 14.34,
+   "end": 14.5
   },
   {
    "word": "hatalarını",
    "spk": "CIRAK",
    "line": 4,
-   "start": 15.76,
-   "end": 16.48
+   "start": 14.5,
+   "end": 15.2
   },
   {
    "word": "tek",
    "spk": "CIRAK",
    "line": 4,
-   "start": 16.48,
-   "end": 16.8
+   "start": 15.2,
+   "end": 15.48
   },
   {
    "word": "tek",
    "spk": "CIRAK",
    "line": 4,
-   "start": 16.8,
-   "end": 17.04
+   "start": 15.48,
+   "end": 15.7
   },
   {
    "word": "anlatacağım.",
    "spk": "CIRAK",
    "line": 4,
-   "start": 17.04,
-   "end": 17.88
+   "start": 15.7,
+   "end": 16.26
   },
   {
    "word": "Bakalım",
    "spk": "CIRAK",
    "line": 4,
-   "start": 18.52,
-   "end": 19.12
+   "start": 16.62,
+   "end": 17.0
   },
   {
    "word": "kim",
    "spk": "CIRAK",
    "line": 4,
-   "start": 19.12,
-   "end": 19.4
+   "start": 17.0,
+   "end": 17.2
   },
   {
    "word": "kazanacak.",
    "spk": "CIRAK",
    "line": 4,
-   "start": 19.4,
-   "end": 20.14
+   "start": 17.2,
+   "end": 17.9
   },
   {
    "word": "Bunu",
    "spk": "HOCA",
    "line": 5,
-   "start": 21.16,
-   "end": 21.48
+   "start": 18.7,
+   "end": 18.92
   },
   {
    "word": "sana",
    "spk": "HOCA",
    "line": 5,
-   "start": 21.48,
-   "end": 21.74
+   "start": 18.92,
+   "end": 19.32
   },
   {
    "word": "anlatan",
    "spk": "HOCA",
    "line": 5,
-   "start": 21.74,
-   "end": 22.52
+   "start": 19.32,
+   "end": 19.86
   },
   {
    "word": "arkadaş,",
    "spk": "HOCA",
    "line": 5,
-   "start": 22.52,
-   "end": 23.1
+   "start": 19.86,
+   "end": 20.84
   },
   {
    "word": "ona",
    "spk": "HOCA",
    "line": 5,
-   "start": 23.52,
-   "end": 23.72
+   "start": 21.2,
+   "end": 21.24
   },
   {
    "word": "da",
    "spk": "HOCA",
    "line": 5,
-   "start": 23.72,
-   "end": 23.92
+   "start": 21.24,
+   "end": 21.7
   },
   {
    "word": "senin",
    "spk": "HOCA",
    "line": 5,
-   "start": 23.92,
-   "end": 24.2
+   "start": 21.7,
+   "end": 21.94
   },
   {
    "word": "hakkında",
    "spk": "HOCA",
    "line": 5,
-   "start": 24.2,
-   "end": 24.94
+   "start": 21.94,
+   "end": 22.46
   },
   {
    "word": "bir",
    "spk": "HOCA",
    "line": 5,
-   "start": 24.94,
-   "end": 25.14
+   "start": 22.46,
+   "end": 22.7
   },
   {
    "word": "şey",
    "spk": "HOCA",
    "line": 5,
-   "start": 25.14,
-   "end": 25.44
+   "start": 22.7,
+   "end": 22.9
   },
   {
    "word": "anlatmış",
    "spk": "HOCA",
    "line": 5,
-   "start": 25.44,
-   "end": 26.22
+   "start": 22.9,
+   "end": 23.46
   },
   {
    "word": "mıdır?",
    "spk": "HOCA",
    "line": 5,
-   "start": 26.22,
-   "end": 26.68
+   "start": 23.46,
+   "end": 23.8
   },
   {
    "word": "Şey...",
    "spk": "CIRAK",
    "line": 6,
-   "start": 27.48,
-   "end": 27.78
+   "start": 24.92,
+   "end": 25.8
   },
   {
    "word": "Bunu",
    "spk": "CIRAK",
    "line": 6,
-   "start": 27.78,
-   "end": 28.1
+   "start": 25.8,
+   "end": 26.02
   },
   {
    "word": "hiç",
    "spk": "CIRAK",
    "line": 6,
-   "start": 28.1,
-   "end": 28.44
+   "start": 26.02,
+   "end": 26.36
   },
   {
    "word": "düşünmedim.",
    "spk": "CIRAK",
    "line": 6,
-   "start": 28.44,
-   "end": 29.08
+   "start": 26.36,
+   "end": 26.9
   },
   {
    "word": "Şu",
    "spk": "HOCA",
    "line": 7,
-   "start": 30.0,
-   "end": 30.3
+   "start": 27.7,
+   "end": 27.98
   },
   {
    "word": "tahtaya",
    "spk": "HOCA",
    "line": 7,
-   "start": 30.3,
-   "end": 30.92
+   "start": 27.98,
+   "end": 28.52
   },
   {
    "word": "bak.",
    "spk": "HOCA",
    "line": 7,
-   "start": 30.92,
-   "end": 31.24
+   "start": 28.52,
+   "end": 28.84
   },
   {
    "word": "At",
    "spk": "HOCA",
    "line": 7,
-   "start": 31.96,
-   "end": 32.18
+   "start": 29.64,
+   "end": 30.06
   },
   {
    "word": "neden",
    "spk": "HOCA",
    "line": 7,
-   "start": 32.18,
-   "end": 32.48
+   "start": 30.06,
+   "end": 30.5
   },
   {
    "word": "bu",
    "spk": "HOCA",
    "line": 7,
-   "start": 32.48,
-   "end": 32.88
+   "start": 30.5,
+   "end": 30.72
   },
   {
    "word": "kadar",
    "spk": "HOCA",
    "line": 7,
-   "start": 32.88,
-   "end": 33.18
+   "start": 30.72,
+   "end": 31.06
   },
   {
    "word": "tehlikelidir,",
    "spk": "HOCA",
    "line": 7,
-   "start": 33.18,
-   "end": 34.14
+   "start": 31.06,
+   "end": 31.88
   },
   {
    "word": "bilir",
    "spk": "HOCA",
    "line": 7,
-   "start": 34.14,
-   "end": 34.54
+   "start": 31.88,
+   "end": 32.3
   },
   {
    "word": "misin?",
    "spk": "HOCA",
    "line": 7,
-   "start": 34.54,
-   "end": 34.84
+   "start": 32.3,
+   "end": 32.84
   },
   {
    "word": "Taşların",
    "spk": "CIRAK",
    "line": 8,
-   "start": 35.54,
-   "end": 36.28
+   "start": 33.24,
+   "end": 33.72
   },
   {
    "word": "üstünden",
    "spk": "CIRAK",
    "line": 8,
-   "start": 36.28,
-   "end": 36.96
+   "start": 33.72,
+   "end": 34.12
   },
   {
    "word": "atlayabildiği",
    "spk": "CIRAK",
    "line": 8,
-   "start": 36.96,
-   "end": 38.0
+   "start": 34.12,
+   "end": 34.84
   },
   {
    "word": "için",
    "spk": "CIRAK",
    "line": 8,
-   "start": 38.0,
-   "end": 38.36
+   "start": 34.84,
+   "end": 35.06
   },
   {
    "word": "mi?",
    "spk": "CIRAK",
    "line": 8,
-   "start": 38.36,
-   "end": 38.62
+   "start": 35.06,
+   "end": 35.32
   },
   {
    "word": "Evet.",
    "spk": "HOCA",
    "line": 9,
-   "start": 39.32,
-   "end": 39.62
+   "start": 35.98,
+   "end": 36.62
   },
   {
    "word": "Kimse",
    "spk": "HOCA",
    "line": 9,
-   "start": 40.42,
-   "end": 40.88
+   "start": 37.18,
+   "end": 37.58
   },
   {
    "word": "nereden",
    "spk": "HOCA",
    "line": 9,
-   "start": 40.88,
-   "end": 41.44
+   "start": 37.58,
+   "end": 38.1
   },
   {
    "word": "geleceğini",
    "spk": "HOCA",
    "line": 9,
-   "start": 41.44,
-   "end": 42.14
+   "start": 38.1,
+   "end": 38.6
   },
   {
    "word": "bilmez.",
    "spk": "HOCA",
    "line": 9,
-   "start": 42.14,
-   "end": 42.6
+   "start": 38.6,
+   "end": 39.12
   },
   {
    "word": "Ama",
    "spk": "HOCA",
    "line": 9,
-   "start": 43.4,
-   "end": 43.72
+   "start": 39.86,
+   "end": 40.26
   },
   {
    "word": "atın",
    "spk": "HOCA",
    "line": 9,
-   "start": 43.72,
-   "end": 43.96
+   "start": 40.26,
+   "end": 40.78
   },
   {
    "word": "da",
    "spk": "HOCA",
    "line": 9,
-   "start": 43.96,
-   "end": 44.2
+   "start": 40.78,
+   "end": 40.92
   },
   {
    "word": "onu",
    "spk": "HOCA",
    "line": 9,
-   "start": 44.2,
-   "end": 44.52
+   "start": 40.92,
+   "end": 41.12
   },
   {
    "word": "oynatan",
    "spk": "HOCA",
    "line": 9,
-   "start": 44.52,
-   "end": 45.06
+   "start": 41.12,
+   "end": 41.54
   },
   {
    "word": "bir",
    "spk": "HOCA",
    "line": 9,
-   "start": 45.06,
-   "end": 45.36
+   "start": 41.54,
+   "end": 41.92
   },
   {
    "word": "eli",
    "spk": "HOCA",
    "line": 9,
-   "start": 45.36,
-   "end": 45.68
+   "start": 41.92,
+   "end": 42.02
   },
   {
    "word": "vardır.",
    "spk": "HOCA",
    "line": 9,
-   "start": 45.68,
-   "end": 46.04
+   "start": 42.02,
+   "end": 42.42
   },
   {
    "word": "Ama",
    "spk": "CIRAK",
    "line": 10,
-   "start": 47.0,
-   "end": 47.4
+   "start": 43.26,
+   "end": 43.4
   },
   {
    "word": "o",
    "spk": "CIRAK",
    "line": 10,
-   "start": 47.4,
-   "end": 47.64
+   "start": 43.4,
+   "end": 43.58
   },
   {
    "word": "başlattı.",
    "spk": "CIRAK",
    "line": 10,
-   "start": 47.64,
-   "end": 48.52
+   "start": 43.58,
+   "end": 44.4
   },
   {
    "word": "Yani",
    "spk": "CIRAK",
    "line": 10,
-   "start": 49.24,
-   "end": 49.58
+   "start": 44.8,
+   "end": 45.22
   },
   {
    "word": "susup",
    "spk": "CIRAK",
    "line": 10,
-   "start": 49.58,
-   "end": 50.22
+   "start": 45.22,
+   "end": 45.74
   },
   {
    "word": "yutayım",
    "spk": "CIRAK",
    "line": 10,
-   "start": 50.22,
-   "end": 50.62
+   "start": 45.74,
+   "end": 46.12
   },
   {
    "word": "mı?",
    "spk": "CIRAK",
    "line": 10,
-   "start": 50.62,
-   "end": 50.96
+   "start": 46.12,
+   "end": 46.32
   },
   {
    "word": "Susma",
    "spk": "HOCA",
    "line": 11,
-   "start": 51.72,
-   "end": 52.4
+   "start": 47.12,
+   "end": 47.72
   },
   {
    "word": "çocuğum.",
    "spk": "HOCA",
    "line": 11,
-   "start": 52.4,
-   "end": 53.1
+   "start": 47.72,
+   "end": 48.62
   },
   {
    "word": "Ama",
    "spk": "HOCA",
    "line": 11,
-   "start": 53.58,
-   "end": 53.8
+   "start": 48.92,
+   "end": 49.24
   },
   {
    "word": "arkasından",
    "spk": "HOCA",
    "line": 11,
-   "start": 53.8,
-   "end": 54.66
+   "start": 49.24,
+   "end": 49.98
   },
   {
    "word": "değil,",
    "spk": "HOCA",
    "line": 11,
-   "start": 54.66,
-   "end": 55.04
+   "start": 49.98,
+   "end": 50.54
   },
   {
    "word": "yüzüne",
    "spk": "HOCA",
    "line": 11,
-   "start": 55.04,
-   "end": 55.58
+   "start": 50.8,
+   "end": 51.14
   },
   {
    "word": "konuş.",
    "spk": "HOCA",
    "line": 11,
-   "start": 55.58,
-   "end": 55.9
+   "start": 51.14,
+   "end": 51.44
   },
   {
    "word": "Birbirinizin",
    "spk": "HOCA",
    "line": 12,
-   "start": 56.6,
-   "end": 57.54
+   "start": 52.16,
+   "end": 53.0
   },
   {
    "word": "arkasından",
    "spk": "HOCA",
    "line": 12,
-   "start": 57.54,
-   "end": 58.4
+   "start": 53.0,
+   "end": 53.66
   },
   {
    "word": "at",
    "spk": "HOCA",
    "line": 12,
-   "start": 58.4,
-   "end": 58.82
+   "start": 53.66,
+   "end": 53.94
   },
   {
    "word": "oynattıkça,",
    "spk": "HOCA",
    "line": 12,
-   "start": 58.82,
-   "end": 59.72
+   "start": 53.94,
+   "end": 55.18
   },
   {
    "word": "ikiniz",
    "spk": "HOCA",
    "line": 12,
-   "start": 59.72,
-   "end": 60.16
+   "start": 55.54,
+   "end": 55.76
   },
   {
    "word": "de",
    "spk": "HOCA",
    "line": 12,
-   "start": 60.16,
-   "end": 60.42
+   "start": 55.76,
+   "end": 56.14
   },
   {
    "word": "başkasının",
    "spk": "HOCA",
    "line": 12,
-   "start": 60.42,
-   "end": 61.18
+   "start": 56.14,
+   "end": 56.76
   },
   {
    "word": "oyununda",
    "spk": "HOCA",
    "line": 12,
-   "start": 61.18,
-   "end": 61.92
+   "start": 56.76,
+   "end": 57.32
   },
   {
    "word": "taş",
    "spk": "HOCA",
    "line": 12,
-   "start": 61.92,
-   "end": 62.28
+   "start": 57.32,
+   "end": 57.66
   },
   {
    "word": "olursunuz.",
    "spk": "HOCA",
    "line": 12,
-   "start": 62.28,
-   "end": 63.04
+   "start": 57.66,
+   "end": 58.36
   },
   {
    "word": "Ve",
    "spk": "HOCA",
    "line": 13,
-   "start": 63.6,
-   "end": 63.84
+   "start": 58.36,
+   "end": 59.16
   },
   {
    "word": "o",
    "spk": "HOCA",
    "line": 13,
-   "start": 63.84,
-   "end": 64.06
+   "start": 59.16,
+   "end": 59.56
   },
   {
    "word": "oyunu,",
    "spk": "HOCA",
    "line": 13,
-   "start": 64.06,
-   "end": 64.58
+   "start": 59.56,
+   "end": 60.46
   },
   {
    "word": "sizi",
    "spk": "HOCA",
    "line": 13,
-   "start": 64.58,
-   "end": 64.94
+   "start": 60.54,
+   "end": 60.98
   },
   {
    "word": "birbirinize",
    "spk": "HOCA",
    "line": 13,
-   "start": 64.94,
-   "end": 65.78
+   "start": 60.98,
+   "end": 61.74
   },
   {
    "word": "düşüren",
    "spk": "HOCA",
    "line": 13,
-   "start": 65.78,
-   "end": 66.32
+   "start": 61.74,
+   "end": 62.24
   },
   {
    "word": "el",
    "spk": "HOCA",
    "line": 13,
-   "start": 66.32,
-   "end": 66.62
+   "start": 62.24,
+   "end": 62.62
   },
   {
    "word": "kazanır.",
    "spk": "HOCA",
    "line": 13,
-   "start": 66.62,
-   "end": 67.3
+   "start": 62.62,
+   "end": 63.44
   },
   {
    "word": "Arkadan",
    "spk": "HOCA",
    "line": 14,
-   "start": 67.8,
-   "end": 68.36
+   "start": 63.7,
+   "end": 64.32
   },
   {
    "word": "söylenen",
    "spk": "HOCA",
    "line": 14,
-   "start": 68.36,
-   "end": 69.0
+   "start": 64.32,
+   "end": 64.84
   },
   {
    "word": "söz",
    "spk": "HOCA",
    "line": 14,
-   "start": 69.0,
-   "end": 69.38
+   "start": 64.84,
+   "end": 65.46
   },
   {
    "word": "yolda",
    "spk": "HOCA",
    "line": 14,
-   "start": 69.38,
-   "end": 70.0
+   "start": 65.7,
+   "end": 66.04
   },
   {
    "word": "büyür.",
    "spk": "HOCA",
    "line": 14,
-   "start": 70.0,
-   "end": 70.38
+   "start": 66.04,
+   "end": 66.58
   },
   {
    "word": "Yüze",
    "spk": "HOCA",
    "line": 14,
-   "start": 71.02,
-   "end": 71.4
+   "start": 67.12,
+   "end": 67.4
   },
   {
    "word": "söylenen",
    "spk": "HOCA",
    "line": 14,
-   "start": 71.4,
-   "end": 72.02
+   "start": 67.4,
+   "end": 67.9
   },
   {
    "word": "söz",
    "spk": "HOCA",
    "line": 14,
-   "start": 72.02,
-   "end": 72.6
+   "start": 67.9,
+   "end": 68.44
   },
   {
    "word": "yerinde",
    "spk": "HOCA",
    "line": 14,
-   "start": 72.6,
-   "end": 73.04
+   "start": 68.6,
+   "end": 69.14
   },
   {
    "word": "kalır.",
    "spk": "HOCA",
    "line": 14,
-   "start": 73.04,
-   "end": 73.56
+   "start": 69.14,
+   "end": 69.78
   },
   {
    "word": "Başlatan",
    "spk": "HOCA",
    "line": 15,
-   "start": 74.12,
-   "end": 74.94
+   "start": 70.02,
+   "end": 70.92
   },
   {
    "word": "her",
    "spk": "HOCA",
    "line": 15,
-   "start": 74.94,
-   "end": 75.18
+   "start": 70.92,
+   "end": 71.3
   },
   {
    "word": "zaman",
    "spk": "HOCA",
    "line": 15,
-   "start": 75.18,
-   "end": 75.62
+   "start": 71.3,
+   "end": 71.74
   },
   {
    "word": "biridir.",
    "spk": "HOCA",
    "line": 15,
-   "start": 75.62,
-   "end": 76.14
+   "start": 71.74,
+   "end": 72.44
   },
   {
    "word": "Bitirmek",
    "spk": "HOCA",
    "line": 15,
-   "start": 76.9,
-   "end": 77.52
+   "start": 73.12,
+   "end": 73.72
   },
   {
    "word": "ise",
    "spk": "HOCA",
    "line": 15,
-   "start": 77.52,
-   "end": 77.84
+   "start": 73.72,
+   "end": 74.26
   },
   {
    "word": "cesaret",
    "spk": "HOCA",
    "line": 15,
-   "start": 77.84,
-   "end": 78.52
+   "start": 74.26,
+   "end": 74.88
   },
   {
    "word": "ister.",
    "spk": "HOCA",
    "line": 15,
-   "start": 78.52,
-   "end": 79.08
+   "start": 74.88,
+   "end": 75.28
   },
   {
    "word": "Unutma,",
    "spk": "HOCA",
    "line": 16,
-   "start": 79.82,
-   "end": 80.44
+   "start": 75.9,
+   "end": 76.7
   },
   {
    "word": "herkesin",
    "spk": "HOCA",
    "line": 16,
-   "start": 80.44,
-   "end": 81.16
+   "start": 77.14,
+   "end": 77.68
   },
   {
    "word": "birbirine",
    "spk": "HOCA",
    "line": 16,
-   "start": 81.16,
-   "end": 81.72
+   "start": 77.68,
+   "end": 78.2
   },
   {
    "word": "kuyu",
    "spk": "HOCA",
    "line": 16,
-   "start": 81.72,
-   "end": 82.12
+   "start": 78.2,
+   "end": 78.5
   },
   {
    "word": "kazdığı",
    "spk": "HOCA",
    "line": 16,
-   "start": 82.12,
-   "end": 82.62
+   "start": 78.5,
+   "end": 79.0
   },
   {
    "word": "yerde",
    "spk": "HOCA",
    "line": 16,
-   "start": 82.62,
-   "end": 82.96
+   "start": 79.0,
+   "end": 79.48
   },
   {
    "word": "kimse",
    "spk": "HOCA",
    "line": 16,
-   "start": 82.96,
-   "end": 83.34
+   "start": 79.48,
+   "end": 80.1
   },
   {
    "word": "rahat",
    "spk": "HOCA",
    "line": 16,
-   "start": 83.34,
-   "end": 83.76
+   "start": 80.1,
+   "end": 80.46
   },
   {
    "word": "yürüyemez.",
    "spk": "HOCA",
    "line": 16,
-   "start": 83.76,
-   "end": 84.62
+   "start": 80.46,
+   "end": 81.64
   },
   {
    "word": "Dinle,",
    "spk": "HOCA",
    "line": 17,
-   "start": 84.62,
-   "end": 85.64
+   "start": 81.96,
+   "end": 82.62
   },
   {
    "word": "düşün",
    "spk": "HOCA",
    "line": 17,
-   "start": 85.64,
-   "end": 85.95
+   "start": 83.2,
+   "end": 83.48
   },
   {
    "word": "ve",
    "spk": "HOCA",
    "line": 17,
-   "start": 85.95,
-   "end": 86.26
+   "start": 83.48,
+   "end": 84.46
   },
   {
    "word": "kendine",
    "spk": "HOCA",
    "line": 17,
-   "start": 86.26,
-   "end": 86.92
+   "start": 84.46,
+   "end": 85.1
   },
   {
    "word": "bir",
    "spk": "HOCA",
    "line": 17,
-   "start": 86.92,
-   "end": 87.08
+   "start": 85.1,
+   "end": 85.38
   },
   {
    "word": "çay",
    "spk": "HOCA",
    "line": 17,
-   "start": 87.08,
-   "end": 87.5
+   "start": 85.38,
+   "end": 85.6
   },
   {
    "word": "daha",
    "spk": "HOCA",
    "line": 17,
-   "start": 87.5,
-   "end": 87.7
+   "start": 85.6,
+   "end": 85.86
   },
   {
    "word": "koy.",
    "spk": "HOCA",
    "line": 17,
-   "start": 87.7,
-   "end": 88.0
+   "start": 85.86,
+   "end": 86.08
   }
  ],
  "lines": [
@@ -993,110 +993,110 @@
    "spk": "CIRAK",
    "text": "Ekip arkadaşım müdüre benim hakkımda yalan söylemiş.",
    "start": 0.0,
-   "end": 4.02
+   "end": 3.72
   },
   {
    "spk": "HOCA",
    "text": "Nereden duydun?",
-   "start": 4.8,
-   "end": 5.96
+   "start": 4.24,
+   "end": 5.64
   },
   {
    "spk": "CIRAK",
    "text": "Başka bir arkadaş anlattı. Toplantıda beni suçlamış.",
-   "start": 6.8,
-   "end": 11.8
+   "start": 6.64,
+   "end": 10.32
   },
   {
    "spk": "HOCA",
    "text": "Peki sen ne yapacaksın?",
-   "start": 12.58,
-   "end": 14.04
+   "start": 10.64,
+   "end": 13.1
   },
   {
    "spk": "CIRAK",
    "text": "Ben de onun hatalarını tek tek anlatacağım. Bakalım kim kazanacak.",
-   "start": 14.98,
-   "end": 20.14
+   "start": 13.92,
+   "end": 17.9
   },
   {
    "spk": "HOCA",
    "text": "Bunu sana anlatan arkadaş, ona da senin hakkında bir şey anlatmış mıdır?",
-   "start": 21.16,
-   "end": 26.68
+   "start": 18.7,
+   "end": 23.8
   },
   {
    "spk": "CIRAK",
    "text": "Şey... Bunu hiç düşünmedim.",
-   "start": 27.48,
-   "end": 29.08
+   "start": 24.92,
+   "end": 26.9
   },
   {
    "spk": "HOCA",
    "text": "Şu tahtaya bak. At neden bu kadar tehlikelidir, bilir misin?",
-   "start": 30.0,
-   "end": 34.84
+   "start": 27.7,
+   "end": 32.84
   },
   {
    "spk": "CIRAK",
    "text": "Taşların üstünden atlayabildiği için mi?",
-   "start": 35.54,
-   "end": 38.62
+   "start": 33.24,
+   "end": 35.32
   },
   {
    "spk": "HOCA",
    "text": "Evet. Kimse nereden geleceğini bilmez. Ama atın da onu oynatan bir eli vardır.",
-   "start": 39.32,
-   "end": 46.04
+   "start": 35.98,
+   "end": 42.42
   },
   {
    "spk": "CIRAK",
    "text": "Ama o başlattı. Yani susup yutayım mı?",
-   "start": 47.0,
-   "end": 50.96
+   "start": 43.26,
+   "end": 46.32
   },
   {
    "spk": "HOCA",
    "text": "Susma çocuğum. Ama arkasından değil, yüzüne konuş.",
-   "start": 51.72,
-   "end": 55.9
+   "start": 47.12,
+   "end": 51.44
   },
   {
    "spk": "HOCA",
    "text": "Birbirinizin arkasından at oynattıkça, ikiniz de başkasının oyununda taş olursunuz.",
-   "start": 56.6,
-   "end": 63.04
+   "start": 52.16,
+   "end": 58.36
   },
   {
    "spk": "HOCA",
    "text": "Ve o oyunu, sizi birbirinize düşüren el kazanır.",
-   "start": 63.6,
-   "end": 67.3
+   "start": 58.36,
+   "end": 63.44
   },
   {
    "spk": "HOCA",
    "text": "Arkadan söylenen söz yolda büyür. Yüze söylenen söz yerinde kalır.",
-   "start": 67.8,
-   "end": 73.56
+   "start": 63.7,
+   "end": 69.78
   },
   {
    "spk": "HOCA",
    "text": "Başlatan her zaman biridir. Bitirmek ise cesaret ister.",
-   "start": 74.12,
-   "end": 79.08
+   "start": 70.02,
+   "end": 75.28
   },
   {
    "spk": "HOCA",
    "text": "Unutma, herkesin birbirine kuyu kazdığı yerde kimse rahat yürüyemez.",
-   "start": 79.82,
-   "end": 84.62
+   "start": 75.9,
+   "end": 81.64
   },
   {
    "spk": "HOCA",
    "text": "Dinle, düşün ve kendine bir çay daha koy.",
-   "start": 84.62,
-   "end": 88.0
+   "start": 81.96,
+   "end": 86.08
   }
  ],
- "duration": 88.607
+ "duration": 86.345
 }

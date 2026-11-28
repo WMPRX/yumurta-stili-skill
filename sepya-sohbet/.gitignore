@@ -5,3 +5,4 @@ stories/*/audio/*.wav
 *.onnx
 *.onnx.json
 __pycache__/
+stories/*/voice/el_cache/

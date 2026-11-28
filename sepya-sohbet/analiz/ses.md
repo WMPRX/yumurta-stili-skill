@@ -39,3 +39,15 @@ Lisanslı bir parça kullanmak için: `python audio/mix.py stories/<ad> --muzik=
 - Kendi kaydınız, iki rolü tek seferde okuyarak: `tools/perde.py` her satırı konuşmacısına göre kaydırır. Erkek sesi (~115 Hz) için
   akıl hocası −4, öğrenci +8; kadın sesi (~200 Hz) için −12 / +3. Akıl hocasında formant korunuyor (doğal), öğrencide formant da kayıyor (küçük, çizgi film).
 - Hız hedefi: konuşurken 3,8 – 4,6 hece/sn; satır arası ~0,7 sn. `kelime_saat.py` ikisini de yazar.
+
+## ElevenLabs v4 ile (At Oynatmak)
+
+| Karakter | Ses | Etiket | Perde | Ölçülen perde | Hız (konuşurken) |
+|---|---|---|---|---|---|
+| Baykuş | Halil (hesaptaki Türkçe profesyonel ses) | `[speaking very slowly, with long pauses]` | −3 yarım ton | 93 Hz (referans 78 – 99) | ~4,1 hece/sn |
+| Kirpi | ses tasarımıyla üretilen "Kirpi (sepya-sohbet)" | `[nervously, in a higher voice]` | — | 274 Hz (referans 205 – 289) | ~5,3 hece/sn (gergin) |
+
+Toplam 4,38 hece/sn (referans 3,8 – 4,6). Whisper 141 kelimenin 140'ını doğru duydu.
+
+Denemelerden: aynı cümlede düz metin 5,2 – 6,1 hece/sn; `speed` 0,8 / 0,9 süreyi değiştirmedi; yavaş konuşma etiketi Halil'in perdesini 88'den ~114 Hz'e çıkardı.
+Hesapta ince, genç bir Türkçe ses yoktu (adaylar 97 – 180 Hz). Ses tasarımında "15 yaşında genç" tarifi güvenlik filtresine takıldı; yetişkin bir çizgi film karakteri tarifi geçti, üç önizlemeden biri 236 Hz'di.
