@@ -42,6 +42,7 @@ Everything there was measured on six reference Shorts (77-95 s, 720×1280, 30 fp
    - Then always: `python tools/kelime_saat.py voice.wav script.txt words.json` (keeps the script's spelling, adds speaker and line to every word; prints words/s and syllables/s) and `python tools/zarf.py voice.wav env.json` (lip-flap envelope).
 5. **Story file** `stories/<name>/story.js` (copy the sample). It exports `NAME`, `FPS`, `BRAND { ad }`, `CAST { TAG: { tur, renk } }`, `MENTOR`, `MUSIC { key, bpm }` and `build({ W, L })` returning `{ shots, expr, poz, end: { at }, look }`.
    - **Shot**: `{ at, set, kind, who, ots, push, focus, pose, prop, opts, fx, flash, look }`.
+     - `push`: total push-in over the shot (default `.05`); `0` holds; a negative value pulls out (starts that much closer, opens to the framing).
      - `kind`: `ikili` (both at the table; mentor left, young one right), `tek` (one character, head 58 % of the width, eyes at 42 %), `yakin` (close-up, head 88 %), `genis` (the two-shot from further away), `nesne` (insert).
      - `ots`: in a single, the other character as a soft out-of-focus shoulder in the lower corner (about a third of the singles in the references).
      - `set`: `kafe` (window on the night city, pendant lamp, round table with tea), `sokak` (apartment facade with lit windows, street lamp, snowy ledge, snow), `oda` (wallpaper, glass cabinet with cups, floor lamp, curtains, rainy window). New sets: add to `engine/src/sets.js` (`back(canvas)` paints once, `fore(g, W, H, k, kind)` draws the table/ledge, `lights` gives the glows).

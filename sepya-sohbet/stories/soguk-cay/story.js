@@ -15,27 +15,27 @@ export function build({ W, L }) {
   const K = { set: 'kafe' };
   const TEL = { kimden: 'Deniz', el: '#ecdfc9', mesajlar: [
     { ben: false, metin: 'Tamam, görüşürüz.' }, { ben: true, metin: 'Görüşürüz.' }, { taslak: true, metin: 'Seni özledim' }] };
-  // 21 shots over ~79 s of voice: median ≈ 3.9 s (references 3.4-5.2). Types: 6 mentor, 6 young one, 3 two-shots, 5 inserts, 1 wide.
+  // 21 shots over ~79 s of voice: median ≈ 3.6 s (references 3.4-5.2). Types: 7 mentor, 6 young one, 2 two-shots, 5 inserts, 1 wide.
   const shots = [
     { at: 0,                      kind: 'nesne', prop: 'telefon', opts: TEL },                        // hook: the key object in frame 0
-    { at: W('yazıp') - .1,        kind: 'ikili', ...K },
-    { at: L(2).start - .2,        kind: 'tek', who: 'CIRAK', ots: 'HOCA', ...K },
-    { at: W('Küstük,') - .1,      kind: 'nesne', prop: 'pencere', opts: { kim: 'kirpi' } },
-    { at: L(3).start - .25,       kind: 'tek', who: 'HOCA', ots: 'CIRAK', ...K },
+    { at: L(1).start - .3,        kind: 'ikili', ...K },
+    { at: W('Küstük,') - .1,      kind: 'nesne', prop: 'pencere', opts: { kim: 'kirpi' }, push: 0 },    // a held insert (8 % of shots hold still)
     { at: L(4).start - .2,        kind: 'yakin', who: 'CIRAK', ...K },
     { at: L(5).start - .25,       kind: 'ikili', ...K },
     { at: L(6).start - .2,        kind: 'tek', who: 'CIRAK', ots: 'HOCA', ...K },
     { at: L(7).start - .25,       kind: 'tek', who: 'HOCA', ...K },
     { at: L(8).start - .2,        kind: 'tek', who: 'CIRAK', ...K },
     { at: L(9).start - .25,       kind: 'nesne', prop: 'cay', opts: { buhar: false, dolu: .8 } },
-    { at: L(10).start + .6,       kind: 'ikili', ...K },
     { at: L(11).start - .1,       kind: 'tek', who: 'HOCA', ots: 'CIRAK', ...K },
     { at: L(12).start - .2,       kind: 'yakin', who: 'CIRAK', ...K },
     { at: L(13).start - .25,      kind: 'tek', who: 'HOCA', ...K },
-    { at: L(14).start - .2,       kind: 'genis', ...K, push: .14 },
+    { at: L(14).start - .2,       kind: 'genis', ...K, push: -.16 },                                     // a pull-out that opens the room
     { at: L(15).start - .2,       kind: 'nesne', prop: 'telefon', push: .08, opts: TEL },
+    { at: L(16).start - .2,       kind: 'tek', who: 'HOCA', ots: 'CIRAK', ...K },
     { at: L(17).start - .2,       kind: 'yakin', who: 'CIRAK', ...K },
-    { at: L(18).start - .25,      kind: 'tek', who: 'HOCA', ots: 'CIRAK', ...K },
+    { at: L(18).start - .25,      kind: 'tek', who: 'HOCA', ...K },
+    { at: W('Göndermezsen,') - .2, kind: 'tek', who: 'CIRAK', ots: 'HOCA', ...K },                       // the listener
+    { at: L(19).start - .25,      kind: 'yakin', who: 'HOCA', ...K },
     { at: W('sessizlikler') - .3, kind: 'nesne', prop: 'cay', opts: { buhar: false, dolu: .8 }, push: .22 },   // one big move per video
     { at: L(20).start - .25,      kind: 'tek', who: 'HOCA', ...K },                                       // the mentor carries the end card
   ];

@@ -80,7 +80,8 @@ try {
 
   function drawShot(s, t) {
     const u = (t - s.a) / Math.max(.001, s.b - s.a);
-    let z = 1 + (s.push ?? .05) * easeShot(u);                             // ~3.8 % measured between the first and last frames
+    const push = s.push ?? .05;                                              // ~3.8 % measured between the first and last frames
+    let z = push >= 0 ? 1 + push * easeShot(u) : 1 - push * (1 - easeShot(u));   // a pull-out starts close and opens to the framing
     if (t > tE && s === shots[shots.length - 1]) z *= 1 - .07 * smooth((t - tE) / 5);
     const [fu, fv] = s.focus || (s.kind === 'tek' || s.kind === 'yakin' ? [.5, .42] : [.5, .5]);
     const cam = (p = 1) => { const zz = Math.pow(z, p); g.translate(fu * W, fv * H); g.scale(zz, zz); g.translate(-fu * W, -fv * H); };
