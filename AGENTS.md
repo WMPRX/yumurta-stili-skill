@@ -1,6 +1,11 @@
 # AGENTS.md
 
-This repository is a skill for making vertical story Shorts in the "egg-head" style (three.js + Canvas 2D + puppeteer frame capture).
+This repository holds two skills for vertical story Shorts:
+
+- the root folder: the "egg-head" style (three.js + Canvas 2D + puppeteer frame capture);
+- `sepya-sohbet/`: the "sepia dialogue" style (two 2D animal characters, a mentor and a young one, talking at night; Canvas 2D + WebGL grade + puppeteer). For this one read `sepya-sohbet/SKILL.md` instead of the root `SKILL.md`, and work inside `sepya-sohbet/`.
+
+The rest of this file is about the egg-head skill.
 
 Before doing anything, read `SKILL.md` and follow it step by step. It holds the whole workflow, the rules and the known pitfalls.
 Then read `STIL_KITABI.md` and the report in `analiz/` for whatever you are about to build.

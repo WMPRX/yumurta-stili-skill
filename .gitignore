@@ -6,4 +6,5 @@ stories/*/voice/*.wav
 ref/
 *.mp4
 !ornek/is-odasi.mp4
+!sepya-sohbet/ornek/*.mp4
 __pycache__/

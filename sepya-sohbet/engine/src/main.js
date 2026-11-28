@@ -39,8 +39,11 @@ try {
   const mentor = story.MENTOR || tags[0], student = tags.find(t => t !== mentor) || tags[0];
   const lastWord = words[words.length - 1];
   const tE = plan.end?.at ?? Math.max(0, lastWord.end - 3);
-  const DUR = plan.dur || Math.max(lastWord.end + 2.8, tE + 9.2);
+  const DUR = plan.dur || Math.max(lastWord.end + 3.0, tE + 9.8);
   const shots = plan.shots.slice().sort((a, b) => a.at - b.at).map((s, i, A) => ({ ...s, a: i ? s.at : 0, b: A[i + 1] ? A[i + 1].at : DUR }));
+  const lastShot = shots[shots.length - 1];
+  if (lastShot.kind === 'nesne' || (lastShot.who && lastShot.who !== mentor) || !['tek', 'yakin'].includes(lastShot.kind))
+    console.warn(`son plan akıl hocasının (${mentor}) tek / yakın planı değil: kapanışta gözler parlamaz / the last shot should be a single of the mentor`);
   const exprEv = (plan.expr || []).slice().sort((a, b) => a.at - b.at);
   const poseEv = (plan.poz || []).slice().sort((a, b) => a.at - b.at);
   const swaps = Object.fromEntries(tags.map(t => [t, exprEv.filter(e => e.who === t).map(e => e.at)]));
@@ -77,7 +80,7 @@ try {
 
   function drawShot(s, t) {
     const u = (t - s.a) / Math.max(.001, s.b - s.a);
-    let z = 1 + (s.push ?? .036) * easeShot(u);
+    let z = 1 + (s.push ?? .05) * easeShot(u);                             // ~3.8 % measured between the first and last frames
     if (t > tE && s === shots[shots.length - 1]) z *= 1 - .07 * smooth((t - tE) / 5);
     const [fu, fv] = s.focus || (s.kind === 'tek' || s.kind === 'yakin' ? [.5, .42] : [.5, .5]);
     const cam = (p = 1) => { const zz = Math.pow(z, p); g.translate(fu * W, fv * H); g.scale(zz, zz); g.translate(-fu * W, -fv * H); };

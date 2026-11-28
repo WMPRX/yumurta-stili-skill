@@ -1,0 +1,8 @@
+# Python 3.10+
+numpy
+# tools/olc.py (measurements)
+opencv-python-headless
+# tools/kelime_saat.py (word times)
+faster-whisper
+# tools/taslak_ses.py (draft voice, local TTS)
+piper-tts

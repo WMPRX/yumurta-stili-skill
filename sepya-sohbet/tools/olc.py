@@ -10,28 +10,28 @@ import numpy as np, cv2
 p = [a for a in sys.argv[1:] if not a.startswith('--')][0]
 opt = dict(a[2:].split('=', 1) for a in sys.argv[1:] if a.startswith('--'))
 
-# reference ranges: [low, median, high] over the six references (analiz/veri/*.json)
+# reference ranges: [low, median, high] of THIS tool run on the six references (analiz/veri/olc_referans.json)
 REF = {
     'sure_sn':            ([77.6, 87.0, 94.8],  'video length (s)'),
-    'plan_sn_ortanca':    ([3.4, 3.85, 5.2],    'median shot length (s)'),
-    'kesme_dakika':       ([10.8, 13.4, 15.6],  'cuts per minute'),
-    'itme_plan_pct':      ([2.5, 3.6, 5.1],     'push-in per shot, % (p25-p75 of all shots)'),
-    'itme_olan_plan_pct': ([80, 88, 95],        'shots that push in > 1 %'),
-    'y50':                ([.118, .157, .188],  'median brightness'),
-    'y5':                 ([.031, .051, .059],  'dark end (p5)'),
-    'kontrast':           ([.44, .525, .62],    'contrast p95 - p5'),
-    'a':                  ([5.8, 6.8, 7.4],     'Lab a* (red)'),
-    'b':                  ([8.4, 9.8, 13.1],    'Lab b* (yellow)'),
-    'c50':                ([10.0, 12.5, 16.1],  'chroma median (Lab C*)'),
-    'c90':                ([15.8, 17.7, 19.7],  'chroma p90'),
-    'kose':               ([.17, .25, .31],     'corner / centre brightness'),
-    'tarama_periyot':     ([.0143, .01445, .0147], 'scanline period (fraction of height)'),
-    'tarama_genlik':      ([.026, .034, .044],  'scanline amplitude (relative)'),
-    'tarama_kayma':       ([.00007, .00023, .00051], 'scanline slide per frame (fraction of height, + = down)'),
-    'altyazi_y':          ([.755, .764, .770],  'caption centre (fraction of height)'),
-    'altyazi_h':          ([.0265, .0281, .029], 'caption glyph height (fraction of height)'),
-    'lufs':               ([-14.2, -14.1, -14.0], 'integrated loudness (LUFS)'),
-    'kapanis_sn':         ([7.3, 7.7, 8.3],     'end: from the fade-out of the last shot to the end (s)'),
+    'plan_sn_ortanca':    ([3.4, 3.85, 5.23],    'median shot length (s)'),
+    'kesme_dakika':       ([12.9, 13.3, 15.9],  'cuts per minute'),
+    'itme_plan_pct':      ([3.22, 3.81, 4.68],     'median push-in per shot, %'),
+    'itme_olan_plan_pct': ([79.2, 87.8, 95.0],        'shots that push in > 1 %'),
+    'y50':                ([0.118, 0.155, 0.192],  'median brightness'),
+    'y5':                 ([0.0274, 0.049, 0.0588],  'dark end (p5)'),
+    'kontrast':           ([0.443, 0.559, 0.624],    'contrast p95 - p5'),
+    'a':                  ([5.88, 6.67, 7.51],     'Lab a* (red)'),
+    'b':                  ([8.22, 9.81, 13.0],    'Lab b* (yellow)'),
+    'c50':                ([10.0, 12.9, 16.1],  'chroma median (Lab C*)'),
+    'c90':                ([15.7, 17.5, 19.3],  'chroma p90'),
+    'kose':               ([0.168, 0.223, 0.315],     'corner / centre brightness'),
+    'tarama_periyot':     ([0.01445, 0.01445, 0.01446], 'scanline period (fraction of height)'),
+    'tarama_genlik':      ([0.0357, 0.0386, 0.044],  'scanline amplitude (relative)'),
+    'tarama_kayma':       ([0.00033, 0.00037, 0.00044], 'scanline slide per frame (fraction of height, + = down)'),
+    'altyazi_y':          ([0.72, 0.764, 0.764],  'caption centre (fraction of height)'),
+    'altyazi_h':          ([0.0273, 0.0281, 0.0281], 'caption glyph height (fraction of height)'),
+    'lufs':               ([-14.2, -14.1, -14.1], 'integrated loudness (LUFS)'),
+    'kapanis_sn':         ([7.3, 7.85, 8.27],     'end: from the fade-out of the last shot to the end (s)'),
 }
 
 cap = cv2.VideoCapture(p); fps = cap.get(5); n = int(cap.get(7)); Wv, Hv = int(cap.get(3)), int(cap.get(4))

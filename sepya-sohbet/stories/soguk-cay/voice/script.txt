@@ -6,6 +6,8 @@ HOCA: Peki ne yazıyorsun?
 CIRAK: Seni özledim. Sadece bu kadar.
 HOCA: Neden göndermiyorsun?
 CIRAK: Doğru zamanı bekliyorum. Belki yarın daha iyi olur.
+HOCA: Dün de aynı şeyi söylemiştin.
+CIRAK: Dün de yarının daha iyi olacağını sanıyordum.
 HOCA: Çayın ne zamandır önünde?
 CIRAK: Biraz soğusun diye bekledim.
 HOCA: Bak, soğudu. Hâlâ içmiyorsun.
@@ -14,5 +16,7 @@ HOCA: Bekliyorsun çocuğum. Ama bazı şeyler beklerken soğur.
 HOCA: Doğru zaman, korkunun geçtiği gün değildir.
 HOCA: Elin titrerken gönder dediğin gündür.
 HOCA: Gönderilmemiş bir mesaj, bir ömür taslak kalır.
+CIRAK: Ya cevap vermezse?
+HOCA: O zaman bir cevabın olur. Göndermezsen, elinde sadece bir soru kalır.
 HOCA: Unutma, çay yeniden ısıtılır. Ama bazı sessizlikler bir daha ısınmaz.
 HOCA: Dinle, düşün ve kendine bir çay daha koy.

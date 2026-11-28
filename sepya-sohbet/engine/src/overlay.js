@@ -20,7 +20,7 @@ export function captionTimeline(words) {
 export function drawCaption(g, caps, t, W, H, o = {}) {
   const c = caps.find(c => t >= c.start && t < c.until);
   if (!c) return null;
-  const size = (o.size || 75) * H / 1920, y = (o.y || .764) * H;
+  const size = (o.size || 73) * H / 1920, y = (o.y || .764) * H;
   g.save();
   g.font = `${size}px Bangers`; g.textAlign = 'center'; g.textBaseline = 'alphabetic';
   const base = y + size * .721 / 2;                                   // centre the CAP height on y

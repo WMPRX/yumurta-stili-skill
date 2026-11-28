@@ -14,6 +14,8 @@ Remotion, React, Blender ya da yapay zekâ video üreticisi yok. Sadece Claude (
 
 ▶ **Bitmiş video:** [`ornek/is-odasi.mp4`](ornek/is-odasi.mp4) (1080×1920, sesli, 9 MB)
 
+> **İkinci skill: [`sepya-sohbet/`](sepya-sohbet/)** — gece, sepya ışıkta iki hayvan karakterin (bilge bir akıl hocası ve genç bir öğrenci) sohbeti: CRT tarama çizgileri, ağır vinyet, tek kelimelik altyazı, parlayan gözlü kapanış kartı. Altı referans videodan ölçüldü; ayrıntı [`sepya-sohbet/README.md`](sepya-sohbet/README.md).
+
 ## İçindekiler
 
 | Yol | Ne |

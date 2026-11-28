@@ -52,7 +52,7 @@ export const PROPS = {
     rrect(g, px - 14 * k, py - 14 * k, pw + 28 * k, ph + 28 * k, 70 * k); fillStroke(g, '#1d1a1a', LINE, 6 * k);
     rrect(g, px, py, pw, ph, 56 * k); g.save(); g.clip();
     const chat = Array.isArray(o.mesajlar);
-    g.fillStyle = chat ? '#e9e2d6' : '#4a4652'; g.fillRect(px, py, pw, ph);
+    g.fillStyle = chat ? '#cfc6b8' : '#4a4652'; g.fillRect(px, py, pw, ph);
     g.font = `600 ${30 * k}px sans-serif`; g.textAlign = 'center';
     if (!chat) {
       g.fillStyle = '#efe9df'; g.font = `300 ${150 * k}px sans-serif`; g.fillText(o.saat || '23:12', W / 2, py + ph * .2);

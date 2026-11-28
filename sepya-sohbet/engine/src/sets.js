@@ -73,12 +73,13 @@ export function teaGlass(g, x, y, s, k = 1, full = .8) {   // tulip tea glass on
 function tableTop(g, W, H, v, k, cloth = '#cdbfa6') {      // round table seen from the front, top edge at v
   const y = v * H, L = LINE;
   g.beginPath(); g.ellipse(W * .5, y + H * .06, W * .62, H * .07, 0, 0, 7); fillStroke(g, cloth, L, 4 * k);
-  g.fillStyle = shade(cloth, .78); g.fillRect(-10, y + H * .06, W + 20, H);
-  g.beginPath(); g.moveTo(-10, y + H * .06); g.lineTo(W + 10, y + H * .06); g.strokeStyle = L; g.lineWidth = 4 * k; g.stroke();
+  const X0 = -W * .3, XW = W * 1.6;                       // wide enough for the 'genis' framing (scaled to .66)
+  g.fillStyle = shade(cloth, .78); g.fillRect(X0, y + H * .06, XW, H);
+  g.beginPath(); g.moveTo(X0, y + H * .06); g.lineTo(X0 + XW, y + H * .06); g.strokeStyle = L; g.lineWidth = 4 * k; g.stroke();
   // scalloped cloth edge
   g.fillStyle = shade(cloth, .9);
-  for (let x = -20; x < W + 40; x += 60 * k) { g.beginPath(); g.arc(x, y + H * .135, 30 * k, 0, Math.PI); g.fill(); g.strokeStyle = rgba(L, .5); g.lineWidth = 2 * k; g.stroke(); }
-  g.fillStyle = '#2a1a12'; g.fillRect(-10, y + H * .135 + 30 * k, W + 20, H);
+  for (let x = X0; x < X0 + XW; x += 60 * k) { g.beginPath(); g.arc(x, y + H * .135, 30 * k, 0, Math.PI); g.fill(); g.strokeStyle = rgba(L, .5); g.lineWidth = 2 * k; g.stroke(); }
+  g.fillStyle = '#2a1a12'; g.fillRect(X0, y + H * .135 + 30 * k, XW, H);
 }
 
 // ------------------------------------------------------------------------------------------------ sets
@@ -147,12 +148,12 @@ export const SETS = {
     },
     fore(g, W, H, k, kind) {
       if (kind === 'tek' || kind === 'yakin') return;
-      const y = H * .79;
-      g.fillStyle = '#5a3a2c'; g.fillRect(-10, y, W + 20, H);
-      for (let r = 0; r < 6; r++) for (let x = (r % 2) * -40 * k; x < W + 80; x += 80 * k) { g.strokeStyle = 'rgba(30,15,8,.55)'; g.lineWidth = 2 * k; g.strokeRect(x, y + 30 * k + r * 36 * k, 80 * k, 36 * k); }
-      g.beginPath(); g.moveTo(-10, y + 8 * k);
-      for (let x = -10; x < W + 40; x += 34 * k) g.quadraticCurveTo(x + 17 * k, y - 14 * k - ((x * 7) % 9) * k, x + 34 * k, y + 4 * k);
-      g.lineTo(W + 20, y + 34 * k); g.lineTo(-10, y + 34 * k); g.closePath(); fillStroke(g, '#ece7df', LINE, 3 * k);
+      const y = H * .79, X0 = -W * .3, XW = W * 1.6;
+      g.fillStyle = '#5a3a2c'; g.fillRect(X0, y, XW, H);
+      for (let r = 0; r < 6; r++) for (let x = X0 + (r % 2) * -40 * k; x < X0 + XW; x += 80 * k) { g.strokeStyle = 'rgba(30,15,8,.55)'; g.lineWidth = 2 * k; g.strokeRect(x, y + 30 * k + r * 36 * k, 80 * k, 36 * k); }
+      g.beginPath(); g.moveTo(X0, y + 8 * k);
+      for (let x = X0; x < X0 + XW; x += 34 * k) g.quadraticCurveTo(x + 17 * k, y - 14 * k - ((Math.abs(x) * 7) % 9) * k, x + 34 * k, y + 4 * k);
+      g.lineTo(X0 + XW, y + 34 * k); g.lineTo(X0, y + 34 * k); g.closePath(); fillStroke(g, '#ece7df', LINE, 3 * k);
     },
   },
 
